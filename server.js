@@ -1,50 +1,43 @@
-//Dependencies
-const express         = require ( 'express' );
-const mongoose        = require ( 'mongoose' );
-const morgan          = require ( 'morgan' );
-const app             = express();
-const db              = mongoose.connection;
-require( 'pretty-error' ).start();
+// DEPENDENCIES
+const express    = require('express');
+const mongoose   = require('mongoose');
+const morgan     = require('morgan');
+const app        = express();
+const session    = require('express-session');
+require('pretty-error').start();
 
-//Environment Variables
-const mongoURI        = process.env.MONGODB_URI || 'mongodb://localhost/bestivals_app';
-const PORT            = process.env.PORT || 3004;
+// CONFIG
+const PORT       = process.env.PORT || 3004;
+const mongoURI   = process.env.MONGODB_URI || 'mongodb://localhost/Bestivals'
 
-//Set mongoose Promise Library
-mongoose.Promise      = global.Promise;
+// DB
+mongoose.connect(mongoURI, { useMongoClient: true });
 
-// Connect to Mongo
-mongoose.connect ( mongoURI , { useMongoClient: true});
+const db = mongoose.connection;
+db.on('error', (err) => console.log('Mongo error: ', err));
+db.on('connected', () => console.log('Mongo connected at: ', mongoURI));
+db.on('disconnected', () => console.log('Mongo disconnected'));
+mongoose.Promise = global.Promise;
 
-// Error / success
-db.on( 'error', ( err ) => console.log( err.message + ' is Mongod not running?' ));
-db.on( 'connected', () => console.log( 'mongo connected: ', mongoURI ));
-db.on( 'disconnected', () => console.log( 'mongo disconnected' ));
+// CONTROLLERS
+const bestivalsController = require('./controllers/bestivals');
+const usersController = require('./controllers/users');
+const sessionsController = require('./controllers/sessions');
 
-// Open the connection to mongo
-db.on( 'open' , ()=>{});
+// MIDDLEWARE
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(express.static('public'));
+app.use(morgan('dev'));
+app.use(session({
+  secret: 'Yeah',
+  resave: true,
+  saveUninitialized: false,
+  maxAge: 2592000000
+}));
+app.use('/bestivals', bestivalsController);
+app.use('/users', usersController);
+app.use('/sessions', sessionsController);
 
-// Middleware
-app.use(express.urlencoded({ extended: false }));// extended: false - does not allow nested objects in query strings
-app.use(express.json());// returns middleware that only parses JSON
-
-// Use morgan
-app.use ( morgan ( 'tiny' ) );
-
-app.use( express.static( 'public' ));
-
-
-//Routes
-//Bestivals route
-// const bestivalsController = require( './controllers/bestivals.js' );
-// app.use ( '/bestivals' , bestivalsController );
-// //Sessions Route
-// const sessionsController = require( './controllers/sessions.js' );
-// app.use ( '/sessions' , sessionsController );
-// //Users Route
-// const usersController = require( './controllers/users.js' );
-// app.use ( '/users' , usersController );
-
-app.listen( PORT , () =>{
-  console.log('Now running on port: ' , PORT);
-});
+// LISTEN
+app.listen(PORT, () => console.log('Bestivals API running on port: ', PORT));

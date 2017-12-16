@@ -1,47 +1,47 @@
-const express           = require ( 'express' );
-const bestivals          = express.Router();
+const express = require('express');
+const router = express.Router();
 
-const Bestival          = require ( '../models/bestivals.js' );
+const Bestival    = require('../models/bestivals.js');
 
 
-// INDEX
-bestivals.get ( '/' , async ( req , res ) => {
-  try {
-    const bestivals = await Bestival.find();
-    res.status( 200 ).json( bestivals );
-  } catch ( error ) {
-    res.status( 400 ).json({error : err.message});
-  }
+//INDEX
+router.get('/', async (req, res) => {
+  const bestival = await Bestival.find().populate('user');
+  res.status(200).json(bestival);
 });
+
 
 //CREATE
-bestivals.post ( '/' , async ( req , res ) => {
+router.post('/', async (req, res) => {
   try {
-    const newBestival = await Bestival.create( req.body );
-    res.status( 200 ).json( newBestival );
-  } catch ( error ) {
-    res.status( 400 ).json({error : error.message});
+    const bestival = await Bestival.create(req.body);
+    res.status(200).json(bestival);
+  } catch (err) {
+    console.log(err);
+    res.status(400).json({ err: err.message });
   }
 });
+
 
 //DELETE
-bestivals.delete ( '/:id' , async ( req , res ) => {
+router.delete('/:id', async (req, res) => {
   try {
-    const deleteBestival = await Bestival.findByIdAndRemove( req.params.id );
-    res.status( 200 ).json( deleteBestival );
-  } catch ( error ) {
-    res.status( 400 ).json({error : error.message});
+    const bestival = await Bestival.findByIdAndRemove(req.params.id);
+    res.status(200).json(bestival);
+  } catch (err) {
+    res.status(400).json({ err: err.message });
   }
 });
 
-//EDIT
-bestivals.put ( '/:id' , async ( req , res ) => {
+//UPDATE
+router.put('/:id', async (req, res) => {
   try {
-    const updateBestival = await Bestival.findByIdAndUpdate( req.params.id, req.body, { new : true } );
-    res.status( 200 ).json( updateBestival );
-  } catch ( error ) {
-    res.status( 400 ).json({error : error.message});
+    const bestival = await Bestival.findByIdAndUpdate(req.params.id, req.body, {new: true});
+    res.status(200).json(bestival);
+  } catch (err) {
+    console.log(err);
+    res.status(400).json({ err: err.message });
   }
 });
 
-module.exports           = bestivals;
+module.exports = router;
