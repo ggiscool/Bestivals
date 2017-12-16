@@ -1,13 +1,10 @@
 const app = angular.module('BestivalsApp', []);
 //---------------------------
 
-app.controller('MainController', function() {
+app.controller('MainController',['$http', function($http) {
 //---------------------------
   this.test = "It works!";
-  console.log("app.js is connected for Angular Basics");
-
   this.createForm = {}
-
   this.festival = '';
 //---------------------------
 
@@ -27,8 +24,6 @@ this.createFestival = () => {
 }).catch (err => console.log('Catch: ', err));
 }
 
-
-
 //GET route
 this.getFestivals = () => {
   $http({
@@ -36,8 +31,9 @@ this.getFestivals = () => {
     url : '/festivals'
   }).then ( response => {
     this.festivals = response.data;
-    this.festival = this.festivals[0];
+    // this.festival = this.festivals;
     console.table(this.festivals);
+    console.log(this.festivals);
   }, error => {
     console.error(error.message);
   }).catch(err => console.error ( 'Catch:', err))
@@ -85,4 +81,4 @@ this.chooseOneFest = (festival) => {
 // }
 
 
-});
+}]);

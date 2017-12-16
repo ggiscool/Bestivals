@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html ng-app="BestivalsApp">
   <head>
     <meta charset="utf-8">
@@ -8,8 +7,18 @@
     <title>Bestivals</title>
   </head>
   <body ng-controller="MainController as ctrl">
-
-    {{ctrl.test}}
-    
+    <!-- {{ctrl.test}} -->
+  <h1>Bestivals</h1>
+    <table>
+        <tr ng-repeat="festival in ctrl.festivals">
+          <td><h3>{{festival.name}}</h3></td>
+          <td>Type: {{festival.type}}</td>
+          <td>Location: {{festival.location}}</td>
+          <td>Dates: {{festival.dates}}</td>
+          <td>Ticket Price: ${{festival.cost}}</td>
+          <td>Submitted by: {{festival.submittedBy}}</td>
+          <td><img ng-src="{{festival.img}}"</td>
+        </tr>
+      </table>
   </body>
 </html>

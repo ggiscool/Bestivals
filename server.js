@@ -35,7 +35,7 @@ app.use(session({
   saveUninitialized: false,
   maxAge: 2592000000
 }));
-app.use('/bestivals', bestivalsController);
+app.use('/festivals', bestivalsController);
 app.use('/users', usersController);
 app.use('/sessions', sessionsController);
 
