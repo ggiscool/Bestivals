@@ -1,9 +1,20 @@
 const express = require('express');
 const router  = express.Router();
-
+const bcrypt = require('bcrypt');
 const User = require('../models/users.js');
 const Bestival= require('../models/bestivals.js');
 
+
+// //login get route
+// router.get('/login', async (req, res) => {
+//   const festivals = await Bestival.find();
+//   res.render('posts/login.ejs', {
+//   message: req.session.message,
+//   username: req.session.username
+//   });
+// });
+
+//Login POST Route
 router.post('/login', async (req, res) => {
   try {
     const user = await User.findOne({ username: req.body.username }); // a document
