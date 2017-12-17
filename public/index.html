@@ -11,5 +11,26 @@
 
     {{ctrl.test}}
     
+    <div class="login-modal">
+        <div class="login-box">
+          Login:<br>
+          <form ng-submit='ctrl.loginUser()'>
+            <input type="text" placeholder="username" ng-model="ctrl.loginForm.username" />
+            <input type="password" placeholder="password" ng-model="ctrl.loginForm.password" />
+            <input type="submit" />
+            <a class="close-modal" href="#">x</a>
+          </form>
+        </div>
+      </div>
+
+      <div class="header">Hi, {{ctrl.user.username}}!
+        <a class="login" href="#">Login</a>
+        <a class="register" href="#">Register</a>
+        <form ng-if='ctrl.user' ng-submit="ctrl.logout()">
+          <input type="submit" value="Logout">
+        </form>
+      </div>
+
+
   </body>
 </html>
