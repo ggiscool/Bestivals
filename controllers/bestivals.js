@@ -1,20 +1,20 @@
 const express = require('express');
 const router = express.Router();
 
-const Bestival    = require('../models/bestivals.js');
+const Festival    = require('../models/bestivals.js');
 const Comments = require('../models/comments.js')
 
 //INDEX
 router.get('/', async (req, res) => {
-  const bestival = await Bestival.find();
-  res.status(200).json(bestival);
+  const festival = await Festival.find();
+  res.status(200).json(festival);
 });
 
 //CREATE
 router.post('/', async (req, res) => {
   try {
-    const newBestival = await Bestival.create(req.body);
-    res.status(200).json(Bestival);
+    const newFestival = await Festival.create(req.body);
+    res.status(200).json(Festival);
   } catch (err) {
     console.log(err);
     res.status(400).json({ err: err.message });
@@ -24,8 +24,8 @@ router.post('/', async (req, res) => {
 //DELETE
 router.delete('/:id', async (req, res) => {
   try {
-    const bestival = await Bestival.findByIdAndRemove(req.params.id);
-    res.status(200).json(bestival);
+    const removeFestival = await Festival.findByIdAndRemove(req.params.id);
+    res.status(200).json(removeFestival);
   } catch (err) {
     res.status(400).json({ err: err.message });
   }
@@ -34,8 +34,8 @@ router.delete('/:id', async (req, res) => {
 //UPDATE
 router.put('/:id', async (req, res) => {
   try {
-    const bestival = await Bestival.findByIdAndUpdate(req.params.id, req.body, {new: true});
-    res.status(200).json(bestival);
+    const editFestival = await Festival.findByIdAndUpdate(req.params.id, req.body, {new: true});
+    res.status(200).json(editFestival);
   } catch (err) {
     console.log(err);
     res.status(400).json({ err: err.message });

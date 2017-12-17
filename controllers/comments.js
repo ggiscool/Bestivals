@@ -3,7 +3,7 @@ const express     = require("express");
 const router      = express.Router();
 
 //MODELS
-const Bestival       = require('../models/bestivals.js');
+const Festival       = require('../models/bestivals.js');
 const Comments    = require('../models/comments.js');
 
 
@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
 });
 
 //CREATE ROUTE
-router.post('/edit', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const createComment = await Comments.create(req.body);
     res.status( 200 ).json( createComment );
@@ -27,7 +27,7 @@ router.post('/edit', async (req, res) => {
 
 //SHOW ROUTE
 router.get('/:id', async (req, res) => {
-  const oneFest = await Bestival.findById(req.params.id);
+  const oneFest = await Festival.findById(req.params.id);
   const comments = await Comments.find({fest: oneFest._id});
   res.send("/public/comments.html", {oneFest, comments});
 });

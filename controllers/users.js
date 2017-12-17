@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 const User   = require('../models/users.js');
-const Book   = require('../models/bestivals.js');
+const Festival   = require('../models/bestivals.js');
 
 router.get('/', async (req, res) => {
   const users = await User.find();
@@ -13,8 +13,8 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const user = await User.findById(req.session.user.id);
-    const bestivals = await Bestival.find({ user: user._id });
-    res.status(200).json({ user, bestivals });
+    const festivals = await Festival.find({ user: user._id });
+    res.status(200).json({ user, festivals });
   } catch (err) {
     console.log(err);
     res.status(400).json({ err: err.message });
@@ -35,7 +35,7 @@ router.post('/', async (req, res) => {
 router.delete(':/id', async (req, res) => {
   try {
     const user = await User.findByIdAndRemove(req.params.id);
-    await Bestival.remove({ user: user.id });
+    await Festival.remove({ user: user.id });
     res.status(200).json({ message: 'Festival removed' });
   } catch (err) {
     console.log(err);
