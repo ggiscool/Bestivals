@@ -40,4 +40,47 @@ router.delete('/logout', (req, res) => {
   });
 });
 
+//PASSWORD HANDLING
+//where user will enter personal info to register
+router.post('/register', async (req, res, next) => {
+  //get password from what user entered -- never store in db w/o encryption
+const password = req.body.password;
+//encrypt it
+const passwordHash = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
+//grab Username
+const username = req.body.username;
+//put user info into db
+const userDbEntry = {};
+//set username to be username
+userDbEntry.username = username;
+//set password as ENCRYPTED password
+userDbEntry.password = passwordHash;
+//What does await do???
+// await User.create(userDbEntry);
+console.log(userDbEntry);
+
+try {
+  const user = await User.create(userDbEntry);
+  console.log(user);
+  req.session.username = user.username;
+  req.session.logged = true;
+  res.redirect('/');
+} catch(err) {
+console.log(err);
+}
+});
+
+//logOUT get route
+router.get('/logout', (req, res) => {
+  // here we destroy the session
+  req.session.destroy();
+  res.redirect('/user/login');
+});
+
+router.get('/update', (req, res) => {
+  req.session.anyProperty = "SOMETHING";
+  console.log(req.session);
+});
+
+// export the controller
 module.exports = router;
