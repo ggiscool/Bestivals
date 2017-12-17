@@ -9,7 +9,7 @@ const bcrypt      =require('bcrypt');
 
 // CONFIG
 const PORT       = process.env.PORT || 3004;
-const mongoURI   = process.env.MONGODB_URI || 'mongodb://localhost/Bestivals'
+const mongoURI   = process.env.MONGODB_URI || 'mongodb://localhost/Festivals'
 
 // DB
 mongoose.connect(mongoURI, { useMongoClient: true });
@@ -21,7 +21,7 @@ db.on('disconnected', () => console.log('Mongo disconnected'));
 mongoose.Promise = global.Promise;
 
 // CONTROLLERS
-const bestivalsController = require('./controllers/bestivals');
+const festivalsController = require('./controllers/festivals');
 const usersController = require('./controllers/users');
 const sessionsController = require('./controllers/sessions');
 const commentsController =
@@ -39,7 +39,7 @@ app.use(session({
   saveUninitialized: false,
   maxAge: 2592000000
 }));
-app.use('/festivals', bestivalsController);
+app.use('/festivals', festivalsController);
 app.use('/users', usersController);
 app.use('/sessions', sessionsController);
 app.use('/comments', commentsController);

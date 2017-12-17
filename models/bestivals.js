@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 
-const bestivalsSchema = mongoose.Schema({
+const festivalsSchema = mongoose.Schema({
   name: {type: String, required: true},
   type: {type: String, required: true},
   //type: music, food, misc
@@ -14,4 +14,4 @@ const bestivalsSchema = mongoose.Schema({
 
 });
 
-module.exports = mongoose.model('Bestivals', bestivalsSchema);
+module.exports = mongoose.model('Festivals', festivalsSchema);
