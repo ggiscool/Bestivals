@@ -80,5 +80,10 @@ this.chooseOneFest = (festival) => {
 //   }).catch ( err => console.error ('Catch:', err))
 // }
 
+<<<<<<< HEAD
 
 }]);
+=======
+//
+});
+>>>>>>> 7b8ace8c6d713ad520f5fe98b0bcc5d67bf03b3e
