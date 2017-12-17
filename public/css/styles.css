@@ -1,0 +1,29 @@
+/*MODALS*/
+.login-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+    overflow: auto;
+    display: none;
+}
+.register-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+    overflow: auto;
+    display: none;
+}
+.login-box, .register-box {
+    background-color: #f2f2f2;
+    height: 200px;
+    width: 200px;
+    padding: 20px;
+    border: 1px solid #ccc;
+  color: black;
+}
