@@ -5,6 +5,7 @@ const morgan     = require('morgan');
 const app        = express();
 const session    = require('express-session');
 require('pretty-error').start();
+const bcrypt      =require('bcrypt');
 
 // CONFIG
 const PORT       = process.env.PORT || 3004;
@@ -23,6 +24,9 @@ mongoose.Promise = global.Promise;
 const bestivalsController = require('./controllers/bestivals');
 const usersController = require('./controllers/users');
 const sessionsController = require('./controllers/sessions');
+const commentsController =
+require('./controllers/comments');
+
 
 // MIDDLEWARE
 app.use(express.urlencoded({ extended: false }));
@@ -35,9 +39,10 @@ app.use(session({
   saveUninitialized: false,
   maxAge: 2592000000
 }));
-app.use('/bestivals', bestivalsController);
+app.use('/festivals', bestivalsController);
 app.use('/users', usersController);
 app.use('/sessions', sessionsController);
+app.use('/comments', commentsController);
 
 // LISTEN
 app.listen(PORT, () => console.log('Bestivals API running on port: ', PORT));
