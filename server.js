@@ -9,7 +9,7 @@ const bcrypt      =require('bcrypt');
 
 // CONFIG
 const PORT       = process.env.PORT || 3004;
-const mongoURI   = process.env.MONGODB_URI || 'mongodb://localhost/Festivals'
+const mongoURI   = process.env.MONGODB_URI || 'mongodb://localhost/festivals'
 
 // DB
 mongoose.connect(mongoURI, { useMongoClient: true });

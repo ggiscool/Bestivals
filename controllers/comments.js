@@ -1,19 +1,21 @@
-
 const express     = require("express");
 const router      = express.Router();
 
 //MODELS
-const Festival       = require('../models/bestivals.js');
+const Festival    = require('../models/bestivals.js');
 const Comments    = require('../models/comments.js');
 
-
-//INDEX ROUTE
+//INDEX
 router.get('/', async (req, res) => {
+  try {
   const allComments = await Comments.find().populate("fest");
-  res.send(allComments);
+  res.status( 200 ).json( allComments );
+} catch ( error ) {
+  res.status( 400 ).json({error : err.message});
+}
 });
 
-//CREATE ROUTE
+//CREATE
 router.post('/', async (req, res) => {
   try {
     const createComment = await Comments.create(req.body);
