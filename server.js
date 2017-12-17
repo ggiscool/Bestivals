@@ -21,11 +21,11 @@ db.on('disconnected', () => console.log('Mongo disconnected'));
 mongoose.Promise = global.Promise;
 
 // CONTROLLERS
-const festivalsController = require('./controllers/festivals');
-const usersController = require('./controllers/users');
-const sessionsController = require('./controllers/sessions');
+const festivalsController = require('./controllers/bestivals.js');
+const usersController = require('./controllers/users.js');
+const sessionsController = require('./controllers/sessions.js');
 const commentsController =
-require('./controllers/comments');
+require('./controllers/comments.js');
 
 
 // MIDDLEWARE
