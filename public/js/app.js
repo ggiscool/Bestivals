@@ -84,5 +84,5 @@ this.chooseOneFest = (festival) => {
 //   }).catch ( err => console.error ('Catch:', err))
 // }
 
-
+//
 });
