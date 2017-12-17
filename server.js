@@ -5,6 +5,7 @@ const morgan     = require('morgan');
 const app        = express();
 const session    = require('express-session');
 require('pretty-error').start();
+const bcrypt      =require('bcrypt');
 
 // CONFIG
 const PORT       = process.env.PORT || 3004;

@@ -14,10 +14,11 @@ router.get('/', async (req, res) => {
 });
 
 //CREATE ROUTE
-router.post('/edit/', async (req, res) => {
+router.post('/edit', async (req, res) => {
   try {
     const createComment = await Comments.create(req.body);
     res.status( 200 ).json( createComment );
+    // .then
   } catch ( error ) {
     console.log(err);
     res.status( 400 ).json({error : error.message});
