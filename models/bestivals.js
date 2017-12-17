@@ -10,7 +10,7 @@ const bestivalsSchema = mongoose.Schema({
   cost: {type: Number, required: true},
   img: {type: String, required: true}
   submittedBy: {type: String, required: true},
-  timestamp: {}
+  { timestamps: { createdAt: 'created_at' } }
 
 });
 
