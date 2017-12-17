@@ -23,6 +23,9 @@ mongoose.Promise = global.Promise;
 const bestivalsController = require('./controllers/bestivals');
 const usersController = require('./controllers/users');
 const sessionsController = require('./controllers/sessions');
+const commentsController =
+require('./controllers/comments');
+
 
 // MIDDLEWARE
 app.use(express.urlencoded({ extended: false }));
@@ -38,6 +41,7 @@ app.use(session({
 app.use('/festivals', bestivalsController);
 app.use('/users', usersController);
 app.use('/sessions', sessionsController);
+app.use('/comments', commentsController);
 
 // LISTEN
 app.listen(PORT, () => console.log('Bestivals API running on port: ', PORT));

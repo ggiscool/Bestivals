@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const Bestival    = require('../models/bestivals.js');
+const Comments = require('../models/comments.js')
 
 //INDEX
 router.get('/', async (req, res) => {
