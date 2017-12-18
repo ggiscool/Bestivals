@@ -104,7 +104,7 @@ this.registerUser = () => {
 this.loginUser = () => {
   $http({
   url: '/sessions/login',
-  method: 'post',
+  method: 'POST',
   data: this.loginForm })
       .then(response =>  {
         console.log('Logged in!');

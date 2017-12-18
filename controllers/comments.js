@@ -9,6 +9,7 @@ const Comments    = require('../models/comments.js');
 router.get('/', async (req, res) => {
   try {
   const allComments = await Comments.find().populate("fest");
+  // const comments = await Comments.find({fest: oneFest._id});
   res.status( 200 ).json( allComments );
 } catch ( error ) {
   res.status( 400 ).json({error : err.message});
@@ -22,7 +23,7 @@ router.post('/', async (req, res) => {
     res.status( 200 ).json( createComment );
     // .then
   } catch ( error ) {
-    console.log(err);
+    // console.log(err);
     res.status( 400 ).json({error : error.message});
   }
 });
