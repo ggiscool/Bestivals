@@ -54,6 +54,24 @@
           </tr>
       </table>
     </section>
+    <section class="addNew">
+      <h2>Add a Festival</h2>
+      <form action="/festivals" method='POST'>
+        <select name="type">
+          <option value="Music">Music</option>
+          <option value="Food">Food</option>
+          <option value="Film">Film</option>
+          <option value="Misc">Misc</option>
+        </select>
+        <input type="text" name="name" placeholder="Festival Name"/>
+        <input type="text" name="location" placeholder="City, State"/>
+        <input type="text" name="dates" placeholder="Festival Date(s)"/>
+        <input type="text" name="cost" placeholder="Ticket price?"/>
+        <input type="text" name="submittedBy" placeholder="Your Name"/>
+        <input type="text" name="img" placeholder="Image URL"/>
+        <p><button class="submitNew">Submit</button></p>
+      </form>
+    </section>
     <section class="comments">
       <div class="comments" ng-repeat="comment in ctrl.comments">
         <h4>Submitted By: {{ctrl.submittedBy}}</h4>
