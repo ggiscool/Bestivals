@@ -138,9 +138,16 @@
     <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="./js/app.js"></script>
+<<<<<<< HEAD
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./css/styles.css"> -->
 <!--
+=======
+
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+    https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css
+
+>>>>>>> a8a3c73ef4ddc62a27f51543eeecdd9bfd2ca93a
     <title>Bestivals</title>
   </head>
   <body ng-controller="MainController as ctrl">
@@ -175,6 +182,7 @@
        <div class="nav">Hi, {{ctrl.user.username}}!
           <a class="login" href="#">Login</a>
           <a class="register" href="#">Register</a>
+
           <form ng-if='ctrl.user' ng-submit="ctrl.logout()">
             <input type="submit" value="Logout">
           </form>
@@ -182,7 +190,20 @@
       </nav>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     <!-- </section> -->
+
     <!-- <section class="allFests">
+=======
+
+          <div ng-if='ctrl.user'>
+        <form ng-submit="ctrl.logout()">
+          <input type="submit" value="Logout">
+        </form>
+
+        </div>
+       </div>
+
+    <section class="allFests">
+>>>>>>> a8a3c73ef4ddc62a27f51543eeecdd9bfd2ca93a
       <table>
           <tr ng-repeat="festival in ctrl.festivals">
             <td><h2>{{festival.name}}</h2></td>
@@ -195,6 +216,24 @@
             <td ng-click="ctrl.deleteFestival( festival._id)">X</td>
           </tr>
       </table>
+    </section>
+    <section class="addNew">
+      <h2>Add a Festival</h2>
+      <form action="/festivals" method='POST'>
+        <select name="type">
+          <option value="Music">Music</option>
+          <option value="Food">Food</option>
+          <option value="Film">Film</option>
+          <option value="Misc">Misc</option>
+        </select>
+        <input type="text" name="name" placeholder="Festival Name"/>
+        <input type="text" name="location" placeholder="City, State"/>
+        <input type="text" name="dates" placeholder="Festival Date(s)"/>
+        <input type="text" name="cost" placeholder="Ticket price?"/>
+        <input type="text" name="submittedBy" placeholder="Your Name"/>
+        <input type="text" name="img" placeholder="Image URL"/>
+        <p><button class="submitNew">Submit</button></p>
+      </form>
     </section>
     <section class="comments">
       <div class="comments" ng-repeat="comment in ctrl.comments">
@@ -213,5 +252,5 @@
       </div>
     </section>
     <footer></footer> -->
-  <!-- </body> --> -->
-<!-- </html> --> --> --> -->
+  <!-- </body> -->
+<!-- </html> -->
