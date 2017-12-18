@@ -5,11 +5,13 @@ const router = express.Router();
 const User   = require('../models/users.js');
 const Festival   = require('../models/bestivals.js');
 
+//ALl Users
 router.get('/', async (req, res) => {
   const users = await User.find();
   res.status(200).json(users);
 });
 
+//Already logged-in
 router.get('/:id', async (req, res) => {
   try {
     const user = await User.findById(req.session.user.id);
@@ -20,7 +22,7 @@ router.get('/:id', async (req, res) => {
     res.status(400).json({ err: err.message });
   }
 });
-
+//Register
 router.post('/', async (req, res) => {
   try {
     const user = await User.create(req.body);
