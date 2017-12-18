@@ -4,6 +4,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="./js/app.js"></script>
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
+    https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css
     <title>Bestivals</title>
   </head>
   <body ng-controller="MainController as ctrl">
@@ -14,7 +15,7 @@
     <nav>
 
 
-    <section class="login-reg">
+    <!-- <section class="login-reg"> -->
       <div class="login-modal">
         <div class="login-box">Login:<br>
           <form ng-submit='ctrl.loginUser()'>
@@ -35,15 +36,15 @@
          </form>
         </div>
        </div>
-       <div class="header nav">Hi, {{ctrl.user.username}}!
+       <div class="nav">Hi, {{ctrl.user.username}}!
           <a class="login" href="#">Login</a>
           <a class="register" href="#">Register</a>
           <form ng-if='ctrl.user' ng-submit="ctrl.logout()">
             <input type="submit" value="Logout">
           </form>
-          </nav>
-       </div>
-    </section>
+        </div>
+      </nav>
+    <!-- </section> -->
     <section class="allFests">
       <table>
           <tr ng-repeat="festival in ctrl.festivals">
