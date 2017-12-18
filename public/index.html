@@ -1,10 +1,146 @@
-<html ng-app="BestivalsApp">
+<!DOCTYPE html>
+<html lang="en" ng-app="BestivalsApp">
+<head>
+  <title>Bestivals</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./js/app.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/styles.css">
+</head>
+<body ng-controller="MainController as ctrl">
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- <a class="navbar-brand" href="#">Logo</a> -->
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Festivals</a></li>
+        <!-- <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li> -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="https://placehold.it/1200x400?text=IMAGE" alt="Image">
+        <div class="carousel-caption">
+          <h3>Festival $</h3>
+          <p>Date</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
+        <div class="carousel-caption">
+          <h3>Festival $</h3>
+          <p>Lorem ipsum...</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<div class="container text-center">
+  <h3>What We Do</h3><br>
+  <div class="row">
+    <div class="col-sm-4">
+      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      <p>Festival</p>
+    </div>
+    <div class="col-sm-4">
+      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      <p>Festival</p>
+    </div>
+    <div class="col-sm-4">
+      <div class="well">
+       <p>Some text..</p>
+      </div>
+      <div class="well">
+       <p>Some text..</p>
+      </div>
+    </div>
+  </div>
+</div><br>
+
+<!-- action="/action_page.php" -->
+<form ng-submit='ctrl.loginUser()'>
+  <div class="form-group">
+    <label for="text">Username</label>
+    <input type="text" class="form-control" id="email" ng-model="ctrl.loginForm.username">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input ng-model="ctrl.loginForm.password" type="password" class="form-control" id="pwd">
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox"> Remember me</label>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+
+
+
+
+
+
+<footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!-- ============================================ -->
+<!-- <html ng-app="BestivalsApp">
   <head>
     <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="./js/app.js"></script>
-    <link rel="stylesheet" type="text/css" href="./css/styles.css">
-    https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/styles.css"> -->
+<!--
     <title>Bestivals</title>
   </head>
   <body ng-controller="MainController as ctrl">
@@ -16,7 +152,7 @@
 
 
     <!-- <section class="login-reg"> -->
-      <div class="login-modal">
+      <!-- <div class="login-modal">
         <div class="login-box">Login:<br>
           <form ng-submit='ctrl.loginUser()'>
             <input type="text" placeholder="username" ng-model="ctrl.loginForm.username" />
@@ -46,16 +182,16 @@
       </nav>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     <!-- </section> -->
-    <section class="allFests">
+    <!-- <section class="allFests">
       <table>
           <tr ng-repeat="festival in ctrl.festivals">
             <td><h2>{{festival.name}}</h2></td>
             <!-- <td>Type: {{festival.type}}</td> -->
-            <td><h4>Location: {{festival.location}}</h4></td>
-            <td><h4>Dates: {{festival.dates}}</h4></td>
+            <!-- <td><h4>Location: {{festival.location}}</h4></td>
+            <td><h4>Dates: {{festival.dates}}</h4></td> -->
             <!-- <td>Ticket Price: ${{festival.cost}}</td>
             <td>Submitted by: {{festival.submittedBy}}</td> -->
-            <td><img ng-src="{{festival.img}}" ng-click=""</td>
+            <!-- <td><img ng-src="{{festival.img}}" ng-click=""</td>
             <td ng-click="ctrl.deleteFestival( festival._id)">X</td>
           </tr>
       </table>
@@ -76,6 +212,6 @@
         </form>
       </div>
     </section>
-    <footer></footer>
-  </body>
-</html>
+    <footer></footer> -->
+  <!-- </body> --> -->
+<!-- </html> --> --> --> -->
