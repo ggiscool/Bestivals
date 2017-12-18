@@ -80,6 +80,48 @@ this.chooseOneFest = (festival) => {
 //   }).catch ( err => console.error ('Catch:', err))
 // }
 
+//login/register stuff
+this.registerUser = () => {
+  $http({
+    url: '/users', method: 'POST', data: this.registerForm })
+   .then(response => {
+     console.log('Registered!');
+     this.user = response.data;
+   }, ex => {
+     console.log(ex.data.err);
+     this.error = ex.statusText;
+   })
+   .catch(err => this.error = "Something's wrong" );
+};
+
+this.loginUser = () => {
+  $http({
+  url: '/sessions/login',
+  method: 'post',
+  data: this.loginForm })
+      .then(response =>  {
+        console.log('Logged in!');
+        this.user = response.data.user;
+        console.log(this.user);
+      }, ex => {
+        console.log(ex.data.err);
+        this.error = ex.statusText;
+      })
+      .catch(err => this.error = "Something's wrong" );
+};
+
+this.logout = () => {
+  $http({
+    url: '/sessions/logout',
+    method: "delete"
+  }).then(response => {
+    console.log("Logout successful");
+    this.user = {};
+  }, ex => {
+    console.error(ex.data.err);
+    this.error = ex.statusText;
+  }).catch(err => this.error = "Something's wrong");
+};
 
 
 }]);
