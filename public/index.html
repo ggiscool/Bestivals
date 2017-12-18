@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="./js/app.js"></script>
-    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+    <!-- <link rel="stylesheet" type="text/css" href="./css/styles.css"> -->
     <title>Bestivals</title>
   </head>
   <body ng-controller="MainController as ctrl">
@@ -35,9 +35,12 @@
        <div class="header">Hi, {{ctrl.user.username}}!
           <a class="login" href="#">Login</a>
           <a class="register" href="#">Register</a>
-          <form ng-if='ctrl.user' ng-submit="ctrl.logout()">
-            <input type="submit" value="Logout">
-          </form>
+          <div ng-if='ctrl.user'>
+        <form ng-submit="ctrl.logout()">
+          <input type="submit" value="Logout">
+        </form>
+
+        </div>
        </div>
     </section>
     <section class="allFests">

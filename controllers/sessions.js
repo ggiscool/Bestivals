@@ -18,12 +18,12 @@ const Festival= require('../models/bestivals.js');
 router.post('/login', async (req, res) => {
   try {
     const user = await User.findOne({ username: req.body.username }); // a document
-    const festival = await Bestival.find({ user: user._id });
+    const festival = await Festival.find({ user: user._id });
 
-    console.log('What is user now anywayz? ', user);
+    console.log('logged in: ', user);
     if (user.authenticate(req.body.password)) {
       req.session.user = user;
-      res.status(200).json({ user, festivals }); // passwords match (successful authenticate)
+      res.status(200).json({ user, festivals }); // passwords match (successful authentication)
     } else {
       res.status(403).json({ err: 'Forbidden' }); // password is wrong
     }
