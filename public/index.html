@@ -7,10 +7,13 @@
     <title>Bestivals</title>
   </head>
   <body ng-controller="MainController as ctrl">
-    <header>
+    <header class="header">
       <h1>Bestivals</h1>
       <h4>Fest on.</h4>
     </header>
+    <nav>
+
+
     <section class="login-reg">
       <div class="login-modal">
         <div class="login-box">Login:<br>
@@ -22,7 +25,7 @@
           </form>
         </div>
       </div> 
-      <div class="register-modal">
+      <div class="register-modal-nav">
         <div class="register-box">Register:<br>
          <form ng-submit='ctrl.registerUser()'>
            <input type="text" placeholder="username" ng-model="ctrl.registerForm.username" />
@@ -32,12 +35,13 @@
          </form>
         </div>
        </div>
-       <div class="header">Hi, {{ctrl.user.username}}!
+       <div class="header nav">Hi, {{ctrl.user.username}}!
           <a class="login" href="#">Login</a>
           <a class="register" href="#">Register</a>
           <form ng-if='ctrl.user' ng-submit="ctrl.logout()">
             <input type="submit" value="Logout">
           </form>
+          </nav>
        </div>
     </section>
     <section class="allFests">

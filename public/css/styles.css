@@ -1,3 +1,14 @@
+* {
+  border: 2px solid red;
+}
+
+.header {
+  text-align: center;
+}
+.nav {
+  background: gray;
+}
+
 /*MODALS*/
 .login-modal {
     position: fixed;
