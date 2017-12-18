@@ -1,21 +1,19 @@
 <html ng-app="BestivalsApp">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/css/styles.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
-  <script type="text/javascript" src="/js/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/app.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
     <title>Bestivals</title>
   </head>
   <body ng-controller="MainController as ctrl">
-
-    <!-- {{ctrl.test}} -->
-  <h1>Bestivals</h1>
-
-
-    {{ctrl.test}}
-    <div class="login-modal">
-        <div class="login-box">
-          Login:<br>
+    <header>
+      <h1>Bestivals</h1>
+      <h4>Fest on.</h4>
+    </header>
+    <section class="login-reg">
+      <div class="login-modal">
+        <div class="login-box">Login:<br>
           <form ng-submit='ctrl.loginUser()'>
             <input type="text" placeholder="username" ng-model="ctrl.loginForm.username" />
             <input type="password" placeholder="password" ng-model="ctrl.loginForm.password" />
@@ -25,36 +23,53 @@
         </div>
       </div> 
       <div class="register-modal">
-        <div class="register-box">
-           Register:<br>
-           <form ng-submit='ctrl.registerUser()'>
-             <input type="text" placeholder="username" ng-model="ctrl.registerForm.username" />
-             <input type="password" placeholder="password" ng-model="ctrl.registerForm.password" />
-             <input type="submit" />
-             <a class="close-modal" href="#">x</a>
-           </form>
-         </div>
+        <div class="register-box">Register:<br>
+         <form ng-submit='ctrl.registerUser()'>
+           <input type="text" placeholder="username" ng-model="ctrl.registerForm.username" />
+           <input type="password" placeholder="password" ng-model="ctrl.registerForm.password" />
+           <input type="submit" />
+           <a class="close-modal" href="#">x</a>
+         </form>
+        </div>
        </div>
-      <div class="header">Hi, {{ctrl.user.username}}!
-        <a class="login" href="#">Login</a>
-        <a class="register" href="#">Register</a>
-        <form ng-if='ctrl.user' ng-submit="ctrl.logout()">
-          <input type="submit" value="Logout">
-        </form>
-      </div>
-
+       <div class="header">Hi, {{ctrl.user.username}}!
+          <a class="login" href="#">Login</a>
+          <a class="register" href="#">Register</a>
+          <form ng-if='ctrl.user' ng-submit="ctrl.logout()">
+            <input type="submit" value="Logout">
+          </form>
+       </div>
+    </section>
+    <section class="allFests">
       <table>
           <tr ng-repeat="festival in ctrl.festivals">
-            <td><h3>{{festival.name}}</h3></td>
-            <td>Type: {{festival.type}}</td>
-            <td>Location: {{festival.location}}</td>
-            <td>Dates: {{festival.dates}}</td>
-            <td>Ticket Price: ${{festival.cost}}</td>
-            <td>Submitted by: {{festival.submittedBy}}</td>
-            <td><img ng-src="{{festival.img}}"</td>
-             <td ng-click="ctrl.deleteFestival( festival._id)">X</td>
+            <td><h2>{{festival.name}}</h2></td>
+            <!-- <td>Type: {{festival.type}}</td> -->
+            <td><h4>Location: {{festival.location}}</h4></td>
+            <td><h4>Dates: {{festival.dates}}</h4></td>
+            <!-- <td>Ticket Price: ${{festival.cost}}</td>
+            <td>Submitted by: {{festival.submittedBy}}</td> -->
+            <td><img ng-src="{{festival.img}}" ng-click=""</td>
+            <td ng-click="ctrl.deleteFestival( festival._id)">X</td>
           </tr>
-        </table>
-
+      </table>
+    </section>
+    <section class="comments">
+      <div class="comments" ng-repeat="comment in ctrl.comments">
+        <h4>Submitted By: {{ctrl.submittedBy}}</h4>
+        <p>{{ctrl.content}}</p>
+        <hr></hr>
+      </div>
+      <div class="leaveComment">
+        <h4>Leave a comment</h4>
+        <form action="/comments" method="POST">
+          <input type="text" name="submittedBy" placeholder="Your name"/><br>
+          <input type="text" name="content" placeholder="Your comment"/>
+          <input type="hidden" name="post" value="<%= oneFest._id %>"/>
+          <p><button class="commentPost">Submit</button></p>
+        </form>
+      </div>
+    </section>
+    <footer></footer>
   </body>
 </html>

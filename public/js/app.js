@@ -1,6 +1,5 @@
 const app = angular.module('BestivalsApp', []);
 //---------------------------
-
 app.controller('MainController',['$http', function($http) {
 //---------------------------
   this.test = "It works!";
@@ -8,10 +7,9 @@ app.controller('MainController',['$http', function($http) {
   this.festival = '';
 //---------------------------
 
-//CREATE Route
+//CREATE ROUTE
 this.createFestival = () => {
   console.log('submit button calls this fxn');
-
   $http({
     method : 'POST',
     url : '/festivals',
@@ -24,7 +22,7 @@ this.createFestival = () => {
 }).catch (err => console.log('Catch: ', err));
 }
 
-//GET route
+//GET ROUTE - FESTIVALS
 this.getFestivals = () => {
   $http({
     method : 'GET',
@@ -32,21 +30,32 @@ this.getFestivals = () => {
   }).then ( response => {
     this.festivals = response.data;
     // this.festival = this.festivals;
-    console.table(this.festivals);
-    console.log(this.festivals);
+    // console.table(this.festivals);
+    // console.log(this.festivals);
+  }, error => {
+    console.error(error.message);
+  }).catch(err => console.error ( 'Catch:', err))
+}
+this.getFestivals();
+
+//GET ROUTE - COMMENTS
+this.getComments = () => {
+  $http({
+    method : 'GET',
+    url : '/comments'
+  }).then ( response => {
+    this.comments = response.data;
+    // this.festival = this.festivals;
+    console.table(this.comments);
+    console.log(this.comments);
   }, error => {
     console.error(error.message);
   }).catch(err => console.error ( 'Catch:', err))
 }
 
-//load immediately on page load
-this.getFestivals();
-
-
-//delete festivals -- SHOULD WE DELTE COMMENTS INSTEAD******
+//DELETE ROUTE
 this.deleteFestival = (id) => {
   console.log("I'm going to delete you!");
-
   $http({
     method : 'DELETE',
     url : '/festivals/' + id
@@ -59,28 +68,25 @@ this.deleteFestival = (id) => {
   }).catch(err => console.error ('Catch: ', err));
 }
 
-//select one festival
+//ONE FESTIVAL
 this.chooseOneFest = (festival) => {
   this.festival = festival;
   console.log(this.festival.name);
 }
 
-// //likes - UPDATE route??
-// this.likeFest = (festival) => {
-//   festival.likes ++;
-//
+// //UPDATE ROUTE
+// this.updateFest = (festival) => {
 //   $http({
 //     method : 'PUT',
 //     url : '/festivals/' + festival._id,
-//     data : {likes : festival.likes}
 //   }).then ( response => {
-//     console.log(response.data.likes);
+//     console.log(response.data);
 //   }, error => {
 //     console.log(error.message);
 //   }).catch ( err => console.error ('Catch:', err))
 // }
 
-//login/register stuff
+//REGISTRATION
 this.registerUser = () => {
   $http({
     url: '/users', method: 'POST', data: this.registerForm })
@@ -94,6 +100,7 @@ this.registerUser = () => {
    .catch(err => this.error = "Something's wrong" );
 };
 
+//LOGIN
 this.loginUser = () => {
   $http({
   url: '/sessions/login',
@@ -110,6 +117,7 @@ this.loginUser = () => {
       .catch(err => this.error = "Something's wrong" );
 };
 
+//LOGOUT
 this.logout = () => {
   $http({
     url: '/sessions/logout',
@@ -122,9 +130,4 @@ this.logout = () => {
     this.error = ex.statusText;
   }).catch(err => this.error = "Something's wrong");
 };
-
-
 }]);
-
-//
-// });
