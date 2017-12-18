@@ -10,8 +10,8 @@ const festivalsSchema = mongoose.Schema({
   cost: {type: Number, required: true},
   submittedBy: {type: String, required: true},
   img: {type: String, required: true},
-  // timestamp: {}
-
-});
+},
+{ timestamps: { createdAt: 'created_at' } }
+);
 
 module.exports = mongoose.model('Festivals', festivalsSchema);

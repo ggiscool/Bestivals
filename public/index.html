@@ -10,17 +10,7 @@
 
     <!-- {{ctrl.test}} -->
   <h1>Bestivals</h1>
-    <table>
-        <tr ng-repeat="festival in ctrl.festivals">
-          <td><h3>{{festival.name}}</h3></td>
-          <td>Type: {{festival.type}}</td>
-          <td>Location: {{festival.location}}</td>
-          <td>Dates: {{festival.dates}}</td>
-          <td>Ticket Price: ${{festival.cost}}</td>
-          <td>Submitted by: {{festival.submittedBy}}</td>
-          <td><img ng-src="{{festival.img}}"</td>
-        </tr>
-      </table>
+
 
     {{ctrl.test}}
     <div class="login-modal">
@@ -41,6 +31,19 @@
           <input type="submit" value="Logout">
         </form>
       </div>
+
+      <table>
+          <tr ng-repeat="festival in ctrl.festivals">
+            <td><h3>{{festival.name}}</h3></td>
+            <td>Type: {{festival.type}}</td>
+            <td>Location: {{festival.location}}</td>
+            <td>Dates: {{festival.dates}}</td>
+            <td>Ticket Price: ${{festival.cost}}</td>
+            <td>Submitted by: {{festival.submittedBy}}</td>
+            <td><img ng-src="{{festival.img}}"</td>
+             <td ng-click="ctrl.deleteFestival( festival._id)">X</td>
+          </tr>
+        </table>
 
   </body>
 </html>
