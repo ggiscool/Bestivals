@@ -1,10 +1,10 @@
+//DEPENDENCIES
 const mongoose = require('mongoose');
 
-
-const festivalsSchema = mongoose.Schema({
+//FESTIVALS SCHEMA
+const festivalSchema = mongoose.Schema({
   name: {type: String, required: true},
   type: {type: String, required: true},
-  //type: music, food, film, misc
   location: {type: String, required: true},
   dates: {type: String, required: true},
   cost: {type: String, required: true},
@@ -14,4 +14,6 @@ const festivalsSchema = mongoose.Schema({
 { timestamps: { createdAt: 'created_at' } }
 );
 
-module.exports = mongoose.model('Festivals', festivalsSchema);
+//----------------------------------------------------
+//EXPORTS
+module.exports = mongoose.model('Festival', festivalSchema);
