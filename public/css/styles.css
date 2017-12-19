@@ -54,9 +54,24 @@ nav {
     border: 1px solid #ccc;
   color: black;
 }
+/*===============================Modal end*/
+.submitFest {
+  margin-left: 275px;
+  margin-top: 50px;
 
-<<<<<<< HEAD
+}
+.jumbotron {
+  border-radius: 10px;
+}
+.addFest {
+  width: 600px;
+  text-align: justify;
+  margin: auto;
 
+}
+#exampleFormControlTextarea1 {
+  width: 500px;
+}
   /* Remove the navbar's default margin-bottom and rounded borders */
   .navbar {
     margin-bottom: 0;

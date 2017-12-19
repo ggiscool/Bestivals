@@ -139,8 +139,8 @@
             <table class="table table-responsive">
                 <thead class="mdb-color lighten-4">
                     <tr>
-                        <th>#</th>
-                        <th class="th-lg">Name</th>
+                        <!-- <th>#</th> -->
+                        <th class="th-lg">Festival Name</th>
                         <th class="th-lg">Type</th>
                         <th class="th-lg">Location</th>
                         <th class="th-lg">Date</th>
@@ -150,7 +150,7 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="festival in ctrl.festivals">
-                        <th scope="row">1</th>
+                        <!-- <th scope="row">1</th> -->
                         <td>{{festival.name}}</td>
                         <td>{{festival.type}}</td>
                          <td>{{festival.location}}</td>
@@ -198,7 +198,68 @@
       </tr>
   </table>
 </section> -->
-<section class="addNew">
+
+<!-- ==================================NEW FORM START -->
+<form action="/festivals" method='POST'>
+  <div class="addFest jumbotron">
+
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputFestival">Festival Name</label>
+      <input name="name" type="text" class="form-control" id="inputEmail4" placeholder="Festival Name">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputlocation">Location</label>
+      <input name="location" type="text" class="form-control" id="inputPassword4" placeholder="City, State">
+    </div>
+  </div>
+  <div class="form-group col-md-6">
+    <label for="inputAddress">Date</label>
+    <input name="dates" type="text" class="form-control" id="inputAddress" placeholder="Festival Date(s)">
+  </div>
+  <div class="form-group col-md-6">
+    <label for="inputAddress2">Ticket Price</label>
+    <input name="cost" type="text" class="form-control" id="inputAddress2" placeholder="Ticket Price?">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="inputName">Name</label>
+      <input name="submittedBy" type="text" class="form-control" id="inputCity" placeholder="Your Name">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputType">Type</label>
+      <select name="type" id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>Music</option>
+        <option>Film</option>
+        <option>Food</option>
+        <option>Misc</option>
+      </select>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputZip">Image URL</label>
+      <input name="img"type="text" class="form-control" id="inputZip" placeholder="Image URL">
+    </div>
+  </div>
+  <!-- <div class="form-group">
+    <div class="form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox"> Check me out
+      </label>
+    </div>
+  </div> -->
+  <div class="submitFest">
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+</div>
+
+
+<!-- =======================================NEW FORM END -->
+<!-- <section class="addNew">
   <h2>Add a Festival</h2>
   <form action="/festivals" method='POST'>
     <select name="type">
@@ -215,7 +276,7 @@
     <input type="text" name="img" placeholder="Image URL"/>
     <p><button class="submitNew">Submit</button></p>
   </form>
-</section>
+</section> -->
 
 <section class="comments">
   <div ng-repeat="comment in ctrl.comments">
