@@ -108,7 +108,7 @@ this.loginUser = () => {
   data: this.loginForm })
       .then(response =>  {
         console.log('Logged in!');
-        this.user = response.data.user;
+        this.user = response.data;
         console.log(this.user);
       }, ex => {
         console.log(ex.data.err);

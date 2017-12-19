@@ -44,5 +44,10 @@ app.use('/users', usersController);
 app.use('/sessions', sessionsController);
 app.use('/comments', commentsController);
 
+//testing
+app.get("/test", (req, res) => {
+  res.send(req.session);
+});
+
 // LISTEN
 app.listen(PORT, () => console.log('Bestivals API running on port: ', PORT));
