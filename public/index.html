@@ -43,6 +43,7 @@
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
 
     <!-- Wrapper for slides -->
@@ -56,12 +57,22 @@
       </div>
 
       <div class="item">
-        <img src="http://insider.ticketmaster.com/wp-content/uploads/EFF2016_0623_203222-8631_CCW-copy-1000x667-1000x667.jpg" width="1000" height="600" alt="Image">
+        <img src="http://hapskorea.com/wp-content/uploads/2014/09/Busan-International-Film-Festival-2014.jpg" width="1000" height="600" alt="Image">
         <div class="carousel-caption">
           <h3>Film</h3>
           <p>Lorem ipsum...</p>
         </div>
       </div>
+
+      <div class="item">
+        <img src="http://blog.iccadubai.ae/wp-content/uploads/2016/11/2957-Dubai-Food-Carnival-2014.jpg" width="1000" height="600" alt="Image">
+        <div class="carousel-caption">
+          <h3>Food</h3>
+          <p>Lorem ipsum...</p>
+        </div>
+      </div>
+
+
     </div>
 
     <!-- Left and right controls -->
@@ -83,7 +94,7 @@
       <p>Music</p>
     </div>
     <div class="col-sm-4">
-      <img src="https://cdn20.patchcdn.com/users/22791208/20161024/024515/styles/T800x600/public/article_images/moviereel_2-1477334232-7103.jpg" style="width:100%" class="img-responsive"  alt="Image">
+      <img src="http://libbyvision.com/wp-content/uploads/2017/04/007_food_photographer_south_florida_magazine_photographer_dark_style-533x800-640x480_c.jpg" style="width:100%" class="img-responsive"  alt="Image">
       <p>Food</p>
     </div>
 
@@ -118,8 +129,57 @@
   <button type="submit" class="btn btn-default">Submit</button>
 </form> -->
 
+<!-- ===========================================START -->
+<div class="card">
+    <div class="card-body">
 
-<section class="allFests">
+        <div class="table-wrapper-2">
+
+            <!--Table-->
+            <table class="table table-responsive">
+                <thead class="mdb-color lighten-4">
+                    <tr>
+                        <th>#</th>
+                        <th class="th-lg">Name</th>
+                        <th class="th-lg">Type</th>
+                        <th class="th-lg">Location</th>
+                        <th class="th-lg">Date</th>
+                        <th class="th-lg">Cost</th>
+                        <th class="th-lg">Submitted by</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="festival in ctrl.festivals">
+                        <th scope="row">1</th>
+                        <td>{{festival.name}}</td>
+                        <td>{{festival.type}}</td>
+                         <td>{{festival.location}}</td>
+                        <td>{{festival.dates}}</td>
+                         <td>${{festival.cost}}</td>
+                        <td>{{festival.submittedBy}}</td>
+                        <!-- <td><img ng-src="{{festival.img}}" ng-click=""</td> -->
+                        <td ng-click="ctrl.deleteFestival( festival._id)">X</td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <!--Table-->
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- ==========================================END -->
+
+<!-- <section class="allFests">
 
   <table>
       <tr ng-repeat="festival in ctrl.festivals">
@@ -128,7 +188,7 @@
          <td><h4>Location: {{festival.location}}</h4></td>
         <td><h4>Dates: {{festival.dates}}</h4></td>
          <td>Ticket Price: ${{festival.cost}}</td>
-        <td>Submitted by: {{festival.submittedBy}}</td> -->
+        <td>Submitted by: {{festival.submittedBy}}</td>
 
         <td><img ng-src="{{festival.img}}" ng-click=""</td>
         <td ng-click="ctrl.deleteFestival( festival._id)">X</td>
@@ -137,7 +197,7 @@
 
       </tr>
   </table>
-</section>
+</section> -->
 <section class="addNew">
   <h2>Add a Festival</h2>
   <form action="/festivals" method='POST'>

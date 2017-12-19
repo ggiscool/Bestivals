@@ -64,6 +64,14 @@ nav {
     padding: 25px;
   }
 
+/*scroll for table=======================*/
+  .table-wrapper-2 {
+    display: block;
+    max-height: 300px;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
 .carousel-inner img {
     width: 100%; /* Set width to 100% */
     margin: auto;
@@ -75,8 +83,8 @@ nav {
   .carousel-caption {
     display: none;
   }
-=======
+
 .hero {
   height: 200px;
->>>>>>> 6fd6cccc3a809657e67d0707738b182a8c086c8d
+
 }
