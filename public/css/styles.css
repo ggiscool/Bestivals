@@ -1,19 +1,19 @@
-* {
-  /*border: 2px solid red;*/
+/* * {
+  border: 2px solid red;
 }
 
 header {
   text-align: center;
   background: blue;
   height: 100px;
-  /*width: 100px;*/
+  width: 100px;
 }
 nav {
   background: gray;
   text-align: right;
-  /*margin-bottom: 50px;*/
-  /*border: 3px solid blue;*/
-}
+  margin-bottom: 50px;
+  border: 3px solid blue;
+} */
 
 /*MODALS*/
 .login-modal {
@@ -43,4 +43,8 @@ nav {
     padding: 20px;
     border: 1px solid #ccc;
   color: black;
+}
+
+.hero {
+  height: 200px;
 }

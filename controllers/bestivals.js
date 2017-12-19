@@ -9,7 +9,7 @@ const Comments    = require('../models/comments.js')
 //INDEX (GET ALL)
 router.get('/', async (req, res) => {
 try {
-  const allFests = await Festival.find().populate("user");
+  const allFests = await Festival.find().populate("comment");
   res.status(200).json(allFests);
   console.log(allFests);
 } catch (err) {
