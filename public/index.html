@@ -55,7 +55,7 @@
             <td><h4>Dates: {{festival.dates}}</h4></td>
             <!-- <td>Ticket Price: ${{festival.cost}}</td>
             <td>Submitted by: {{festival.submittedBy}}</td> -->
-            <td><img class="hero" ng-src="{{festival.img}}" ng-click="ctrl."</td>
+            <td><img class="hero" ng-src="{{festival.img}}" ng-click="ctrl.oneFest(festival)"</td>
             <td ng-click="ctrl.deleteFestival(festival._id)">X</td>
           </tr>
       </table>
@@ -89,11 +89,20 @@
         <form action="/comments" method="POST">
           <input type="text" name="submittedBy" placeholder="Your name"/><br>
           <input type="text" name="content" placeholder="Your comment"/>
-          <input type="hidden" name="post" value="<%= oneFest._id %>"/>
+          <input type="hidden" name="post" value="{{oneFest_.id}}"/>
           <p><button class="commentPost">Submit</button></p>
         </form>
       </div>
     </section>
+    <section>
+      <h2>One Festival</h2>
+      <h4>{{ctrl.festival.name}}</h4>
+      <p>Type: {{ctrl.festival.type}}</p>
+      <p>Location: {{ctrl.festival.location}}</p>
+      <p>Dates: {{ctrl.festival.dates}}</p>
+      <p>Ticket Price: {{ctrl.festival.cost}}</p>
+      <p>Submitted by: {{ctrl.festival.submittedBy}}</p>
+      <img class="hero" ng-src="{{ctrl.festival.img}}"/>
     <footer></footer>
   </body>
 </html>
