@@ -1,3 +1,4 @@
+//DEPENDENCIES
 const express     = require("express");
 const router      = express.Router();
 
@@ -8,47 +9,51 @@ const Comments    = require('../models/comments.js');
 //INDEX
 router.get('/', async (req, res) => {
   try {
-  const allComments = await Comments.find().populate("fest");
-  // const comments = await Comments.find({fest: oneFest._id});
-  res.status( 200 ).json( allComments );
-} catch ( error ) {
-  res.status( 400 ).json({error : err.message});
+    const allComms = await Comments.find().populate("fest");
+    res.status(200).json(allComms);
+    console.log(allComms);
+  } catch (err) {
+    res.status(400).json({err : err.message})
 }
 });
 
-//CREATE
+//CREATE COMMENT
 router.post('/', async (req, res) => {
   try {
-    const createComment = await Comments.create(req.body);
-    res.status( 200 ).json( createComment );
-    // .then
-  } catch ( error ) {
-    // console.log(err);
-    res.status( 400 ).json({error : error.message});
+    const createComm = await Comments.create(req.body);
+    res.status(200).json(createComm);
+    console.log(createComm);
+  } catch (err) {
+    res.status(400).json({err : err.message});
   }
 });
 
-//SHOW ROUTE
-router.get('/:id', async (req, res) => {
-  const oneFest = await Festival.findById(req.params.id);
-  const comments = await Comments.find({fest: oneFest._id});
-  res.send("/public/comments.html", {oneFest, comments});
+//EDIT
+router.get('/:id/editComm', async (req, res) => {
+  try {
+    const editComm = await Comments.findById(req.params.id);
+    res.status(200).json(editComm);
+    console.log(editComm);
+  } catch (err) {
+    res.status(400).json({err: err.message})
+  }
 });
 
-//UPDATE (PUT) ROUTE
+//UPDATE
 router.put('/:id', async (req, res) => {
   try {
-    const updateComment = await Comments.findByIdAndUpdate(req.params.id, req.body);
-    res.status(200).json(req.body);
+    const updateComm = await Comments.findByIdAndUpdate(req.params.id, req.body, {new: true});
+    res.status(200).json(updateComm);
+    console.log(updateComm);
   } catch (err) {
-    res.status(400).json({ err: err.message });
+    res.status(400).json({ err: err.message })
   }
 });
 
 //DELETE
 router.delete('/:id', async (req, res) => {
   try {
-    const removeComment = await Comments.findByIdAndRemove(req.params.id);
+    const removeComm = await Comments.findByIdAndRemove(req.params.id);
     res.status(200).json(req.body);
   } catch (err) {
     res.status(400).json({ err: err.message });

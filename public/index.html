@@ -139,6 +139,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="./js/app.js"></script>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./css/styles.css"> -->
 <!--
@@ -148,6 +149,10 @@
     https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css
 
 >>>>>>> a8a3c73ef4ddc62a27f51543eeecdd9bfd2ca93a
+=======
+    <link type="text/css" rel="stylesheet" href="./css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+>>>>>>> 6fd6cccc3a809657e67d0707738b182a8c086c8d
     <title>Bestivals</title>
   </head>
   <body ng-controller="MainController as ctrl">
@@ -155,11 +160,16 @@
       <h1>Bestivals</h1>
       <h4>Fest on.</h4>
     </header>
+<<<<<<< HEAD
     <nav>
 
 
     <!-- <section class="login-reg"> -->
       <!-- <div class="login-modal">
+=======
+    <section class="login-reg">
+      <div class="login-modal">
+>>>>>>> 6fd6cccc3a809657e67d0707738b182a8c086c8d
         <div class="login-box">Login:<br>
           <form ng-submit='ctrl.loginUser()'>
             <input type="text" placeholder="username" ng-model="ctrl.loginForm.username" />
@@ -178,6 +188,7 @@
            <a class="close-modal" href="#">x</a>
          </form>
         </div>
+<<<<<<< HEAD
        </div>
        <div class="nav">Hi, {{ctrl.user.username}}!
           <a class="login" href="#">Login</a>
@@ -195,13 +206,22 @@
 =======
 
           <div ng-if='ctrl.user'>
+=======
+      </div>
+      <div class="nav">Hi, {{ctrl.user.username}}!
+        <a class="login" href="#">Login</a>
+        <a class="register" href="#">Register</a>
+        <form ng-if='ctrl.user' ng-submit="ctrl.logout()">
+          <input type="submit" value="Logout">
+        </form>
+      </div>
+      <div ng-if='ctrl.user'>
+>>>>>>> 6fd6cccc3a809657e67d0707738b182a8c086c8d
         <form ng-submit="ctrl.logout()">
           <input type="submit" value="Logout">
         </form>
-
-        </div>
-       </div>
-
+      </div>
+    </section>
     <section class="allFests">
 >>>>>>> a8a3c73ef4ddc62a27f51543eeecdd9bfd2ca93a
       <table>
@@ -212,8 +232,13 @@
             <td><h4>Dates: {{festival.dates}}</h4></td> -->
             <!-- <td>Ticket Price: ${{festival.cost}}</td>
             <td>Submitted by: {{festival.submittedBy}}</td> -->
+<<<<<<< HEAD
             <!-- <td><img ng-src="{{festival.img}}" ng-click=""</td>
             <td ng-click="ctrl.deleteFestival( festival._id)">X</td>
+=======
+            <td><img class="hero" ng-src="{{festival.img}}" ng-click="ctrl."</td>
+            <td ng-click="ctrl.deleteFestival(festival._id)">X</td>
+>>>>>>> 6fd6cccc3a809657e67d0707738b182a8c086c8d
           </tr>
       </table>
     </section>
@@ -236,8 +261,8 @@
       </form>
     </section>
     <section class="comments">
-      <div class="comments" ng-repeat="comment in ctrl.comments">
-        <h4>Submitted By: {{ctrl.submittedBy}}</h4>
+      <div ng-repeat="comment in ctrl.comments">
+        <h4>{{ctrl.submittedBy}}</h4>
         <p>{{ctrl.content}}</p>
         <hr></hr>
       </div>
