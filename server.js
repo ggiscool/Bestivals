@@ -21,7 +21,7 @@ db.on('disconnected', () => console.log('Mongo disconnected'));
 mongoose.Promise = global.Promise;
 
 // CONTROLLERS
-const festivalsController = require('./controllers/bestivals.js');
+const festivalController = require('./controllers/bestivals.js');
 const usersController = require('./controllers/users.js');
 const sessionsController = require('./controllers/sessions.js');
 const commentsController =
@@ -39,7 +39,7 @@ app.use(session({
   saveUninitialized: false,
   maxAge: 2592000000
 }));
-app.use('/festivals', festivalsController);
+app.use('/festivals', festivalController);
 app.use('/users', usersController);
 app.use('/sessions', sessionsController);
 app.use('/comments', commentsController);
