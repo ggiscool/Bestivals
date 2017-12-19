@@ -9,7 +9,7 @@ const Comments    = require('../models/comments.js')
 //INDEX (GET ALL)
 router.get('/', async (req, res) => {
 try {
-  const allFests = await Festival.find().populate("comment");
+  const allFests = await Festival.find();
   res.status(200).json(allFests);
   console.log(allFests);
 } catch (err) {
@@ -34,7 +34,7 @@ router.get ('/:id', async (req, res) => {
   try {
     const oneFest = await Festival.findById(req.params.id);
     const comments = await Comments.find({fest: oneFest._id});
-    res.status(200).json(oneFest, comments);
+    res.status(200).json({oneFest, comments});
     console.log(oneFest, comments);
   } catch (err) {
     res.status(400).json({err: err.message})
@@ -42,10 +42,10 @@ router.get ('/:id', async (req, res) => {
 });
 
 //EDIT
-router.get('/:id/editFest', async (req, res) => {
+router.get('/:id/edit', async (req, res) => {
   try {
     const editFest = await Festival.findById(req.params.id);
-    res.status(200).json(editFest);
+    res.status(200).json(edit);
     console.log(editFest);
   } catch (err) {
     res.status(400).json({err: err.message})

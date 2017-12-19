@@ -59,28 +59,30 @@ this.createComment = () => {
   }).catch (err => console.log('Catch: ', err));
 }
 
-//SHOW ROUTES------------------------------------------
-//SHOW FESTIVAL
-this.showFest = (festival) => {
-  $http({method: 'GET', url: '/festival', data: this.festival
-  }).then (response => {
-    this.showFest = response.data;
-    console.table(this.showFest);
-    }, error => {
-      console.log(error.message);
-    }).catch (err => console.log('Catch:', err))
-}
+//SHOW ROUTE------------------------------------------
+this.oneFest = ( festival ) => {
+  this.festival = festival;
+  console.log( this.festival);
+};  
+//   $http({method: 'GET', url:'/festival/:id', data: this.oneFest._id
+//   }).then (response => {
+//     this.festival = response.data;
+//     console.table(this.oneFestComments);
+//   }, error => {
+//     console.log(error.message);
+//   }).catch (err => console.log('Catch:', err))
+// };
 
-//SHOW COMMENTS
-this.showComms = (comments) => {
-  $http({method: 'GET', url: '/comments', data: this.comments
+
+this.oneFestComments = (festival) => {
+  $http({method: 'GET', url:'/festival', data: this.oneFest._id
   }).then (response => {
-    this.showComms = response.data;
-    console.table(this.showComms);
-    }, error => {
-      console.log(error.message);
-    }).catch (err => console.log('Catch:', err))
-}
+    this.oneFest._id = response.data;
+    console.table(this.oneFestComments);
+  }, error => {
+    console.log(error.message);
+  }).catch (err => console.log('Catch:', err))
+};
 
 //EDIT ROUTES-----------------------------------------
 //EDIT FESTIVAL
