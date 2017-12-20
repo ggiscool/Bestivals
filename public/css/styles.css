@@ -1,0 +1,50 @@
+/* * {
+  border: 2px solid red;
+}
+
+header {
+  text-align: center;
+  background: blue;
+  height: 100px;
+  width: 100px;
+}
+nav {
+  background: gray;
+  text-align: right;
+  margin-bottom: 50px;
+  border: 3px solid blue;
+} */
+
+/*MODALS*/
+.login-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+    overflow: auto;
+    display: none;
+}
+.register-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+    overflow: auto;
+    display: none;
+}
+.login-box, .register-box {
+    background-color: #f2f2f2;
+    height: 200px;
+    width: 200px;
+    padding: 20px;
+    border: 1px solid #ccc;
+  color: black;
+}
+
+.hero {
+  height: 200px;
+}
