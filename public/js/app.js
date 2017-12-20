@@ -6,7 +6,6 @@ app.controller('MainController',['$http', function($http) {
 
 //VARIABLES
 this.createFestForm = {};
-this.createCommentForm={};
 this.oneFest={};
 this.oneFest=[];
 this.festival = '';
@@ -48,87 +47,44 @@ this.createFestival = () => {
   }).catch (err => console.log('Catch: ', err));
 }
 
-//ADD NEW COMMENT
-this.createComment = () => {
-  $http({method: 'POST', url: '/comments', data: this.createCommentForm
-  }).then (response => {
-    this.comments.push(response.data);
-    this.createCommentsForm = {};
-    }, error => {
-      console.log(error);
-  }).catch (err => console.log('Catch: ', err));
-}
-
 //SHOW ROUTE------------------------------------------
 this.oneFest = ( festival ) => {
   this.festival = festival;
   console.log( this.festival);
-};  
-//   $http({method: 'GET', url:'/festival/:id', data: this.oneFest._id
-//   }).then (response => {
-//     this.festival = response.data;
-//     console.table(this.oneFestComments);
-//   }, error => {
-//     console.log(error.message);
-//   }).catch (err => console.log('Catch:', err))
-// };
-
-
-this.oneFestComments = (festival) => {
-  $http({method: 'GET', url:'/festival', data: this.oneFest._id
-  }).then (response => {
-    this.oneFest._id = response.data;
-    console.table(this.oneFestComments);
-  }, error => {
-    console.log(error.message);
-  }).catch (err => console.log('Catch:', err))
+  // $http({method: 'GET', url:'/festivals/' + this.festival._id
+  // }).then (response => {
+  //   console.log("Response made!");
+  //   this.festival = response.data;
+  //   console.table(this.festival);
+  // }, error => {
+  //   console.log(error.message);
+  // }).catch (err => console.log('Catch:', err))
 };
-
-//EDIT ROUTES-----------------------------------------
-//EDIT FESTIVAL
-this.editFest = (festival) => {
-  $http({method: 'GET', url: '/festival', data: this.festival
-  }).then (response => {
-    this.editFest = response.data;
-    console.table(this.editFest);
-    }, error => {
-      console.log(error.message);
-    }).catch (err => console.log('Catch:', err))
-}
-
-//EDIT COMMENTS
-this.editComms = (comments) => {
-  $http({method: 'GET', url: '/comments', data: this.comments
-  }).then (response => {
-    this.editComms = response.data;
-    console.table(this.editComms);
-    }, error => {
-      console.log(error.message);
-    }).catch (err => console.log('Catch:', err))
-}
 
 //UPDATE ROUTES-----------------------------------------
 //UPDATE FESTIVAL
-this.updateFest = (festival) => {
-  $http({method: 'PUT', url: '/festival', data: this.festival
+this.formUpdate = {};
+this.updateFestival = () => {
+  console.log("++++++++++++++++");
+  console.log(this.formUpdate);
+  $http({method: 'PUT', url: '/festivals/' + this.festival._id, data: this.formUpdate
   }).then (response => {
-    this.updateFest = response.data;
-    console.table(this.updateFest);
+    console.table(this.formUpdate);
     }, error => {
       console.log(error.message);
     }).catch (err => console.log('Catch:', err))
 }
 
-//UPDATE COMMENTS
-this.updateComms = (comments) => {
-  $http({method: 'PUT', url: '/comments', data: this.comments
-  }).then (response => {
-    this.updateComms = response.data;
-    console.table(this.updateComms);
-    }, error => {
-      console.log(error.message);
-    }).catch (err => console.log('Catch:', err))
-}
+// //UPDATE COMMENTS
+// this.updateComms = (comments) => {
+//   $http({method: 'PUT', url: '/comments', data: this.comments
+//   }).then (response => {
+//     this.updateComms = response.data;
+//     console.table(this.updateComms);
+//     }, error => {
+//       console.log(error.message);
+//     }).catch (err => console.log('Catch:', err))
+// }
 
 //DELETE ROUTES-----------------------------------------
 //DELETE FESTIVAL
@@ -143,17 +99,17 @@ this.deleteFestival = (id) => {
   }).catch(err => console.error ('Catch: ', err));
 }
 
-//DELETE COMMENT
-this.deleteComment = (id) => {
-  $http({method: 'DELETE', url: '/comments/' + id
-  }).then (response => {
-    const removeByIndex = this.comments.findById(comments => comment._id ===id);
-    this.comments.splice(removeByIndex, 1);
-    console.log('this is the array index number of the festival i want to delete', removeByIndex);
-    }, error =>{
-      console.error (error.message)
-  }).catch(err => console.error ('Catch: ', err));
-}
+// //DELETE COMMENT
+// this.deleteComment = (id) => {
+//   $http({method: 'DELETE', url: '/comments/' + id
+//   }).then (response => {
+//     const removeByIndex = this.comments.findById(comments => comment._id ===id);
+//     this.comments.splice(removeByIndex, 1);
+//     console.log('this is the array index number of the festival i want to delete', removeByIndex);
+//     }, error =>{
+//       console.error (error.message)
+//   }).catch(err => console.error ('Catch: ', err));
+// }
 
 //LOGIN AND REGISTRATION-----------------------------------------
 //REGISTRATION
