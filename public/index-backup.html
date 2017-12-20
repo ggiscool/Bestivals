@@ -1,0 +1,126 @@
+<html ng-app="BestivalsApp">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/app.js"></script>
+    <link type="text/css" rel="stylesheet" href="./css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <title>Bestivals</title>
+  </head>
+  <body ng-controller="MainController as ctrl">
+    <header class="header">
+      <h1>Bestivals</h1>
+      <h4>Fest on.</h4>
+    </header>
+    <section class="login-reg">
+      <div class="login-modal">
+        <div class="login-box">Login:<br>
+          <form ng-submit='ctrl.loginUser()'>
+            <input type="text" placeholder="username" ng-model="ctrl.loginForm.username" />
+            <input type="password" placeholder="password" ng-model="ctrl.loginForm.password" />
+            <input type="submit" />
+            <a class="close-modal" href="#">x</a>
+          </form>
+        </div>
+      </div> 
+      <div class="register-modal">
+        <div class="register-box">Register:<br>
+         <form ng-submit='ctrl.registerUser()'>
+           <input type="text" placeholder="username" ng-model="ctrl.registerForm.username" />
+           <input type="password" placeholder="password" ng-model="ctrl.registerForm.password" />
+           <input type="submit" />
+           <a class="close-modal" href="#">x</a>
+         </form>
+        </div>
+      </div>
+      <div class="nav">Hi, {{ctrl.user.username}}!
+        <a class="login" href="#">Login</a>
+        <a class="register" href="#">Register</a>
+        <form ng-if='ctrl.user' ng-submit="ctrl.logout()">
+          <input type="submit" value="Logout">
+        </form>
+      </div>
+      <div ng-if='ctrl.user'>
+        <form ng-submit="ctrl.logout()">
+          <input type="submit" value="Logout">
+        </form>
+      </div>
+    </section>
+    <section class="allFests">
+      <table>
+          <tr ng-repeat="festival in ctrl.festivals" ng-click="ctrl.oneFest(festival)">
+            <td><h2>{{festival.name}}</h2></td>
+            <!-- <td>Type: {{festival.type}}</td> -->
+            <td><h4>Location: {{festival.location}}</h4></td>
+            <td><h4>Dates: {{festival.dates}}</h4></td>
+            <!-- <td>Ticket Price: ${{festival.cost}}</td>
+            <td>Submitted by: {{festival.submittedBy}}</td> -->
+            <td><img class="hero" ng-src="{{festival.img}}"></td>
+            <td ng-click="ctrl.deleteFestival(festival._id)">X</td>
+          </tr>
+      </table>
+    </section>
+    <section class="addNew">
+      <h2>Add a Festival</h2>
+      <form action="/festivals" method='POST'>
+        <select name="type">
+          <option value="Music">Music</option>
+          <option value="Food">Food</option>
+          <option value="Film">Film</option>
+          <option value="Misc">Misc</option>
+        </select>
+        <input type="text" name="name" placeholder="Festival Name"/>
+        <input type="text" name="location" placeholder="City, State"/>
+        <input type="text" name="dates" placeholder="Festival Date(s)"/>
+        <input type="text" name="cost" placeholder="Ticket price?"/>
+        <input type="text" name="submittedBy" placeholder="Your Name"/>
+        <input type="text" name="img" placeholder="Image URL"/>
+        <p><button class="submitNew">Submit</button></p>
+      </form>
+    </section>
+    <section>
+      <h2>One Festival</h2>
+      <h4>{{ctrl.festival.name}}</h4>
+      <p>Type: {{ctrl.festival.type}}</p>
+      <p>Location: {{ctrl.festival.location}}</p>
+      <p>Dates: {{ctrl.festival.dates}}</p>
+      <p>Ticket Price: {{ctrl.festival.cost}}</p>
+      <p>Submitted by: {{ctrl.festival.submittedBy}}</p>
+      <img class="hero" ng-src="{{ctrl.festival.img}}"/>
+    </section>
+    <!-- <section class="comments">
+      <div ng-repeat="comment in ctrl.comments">
+        <h4>{{ctrl.submittedBy}}</h4>
+        <p>{{ctrl.content}}</p>
+        <hr></hr>
+      </div>
+      <div class="leaveComment">
+        <h4>Leave a comment</h4>
+        <form action="/comments" method="POST">
+          <input type="text" name="submittedBy" placeholder="Your name"/><br>
+          <input type="text" name="content" placeholder="Your comment"/>
+          <input type="hidden" name="post" value="oneFest._id"/>
+          <p><button class="commentPost">Submit</button></p>
+        </form>
+      </div>
+    </section> -->
+    <section class="updateFest">
+      <h2>Update Festival</h2>
+      <form>
+        <select name="type">
+          <option value="Music">Music</option>
+          <option value="Food">Food</option>
+          <option value="Film">Film</option>
+          <option value="Misc">Misc</option>
+        </select>
+        <input type="text" ng-model="ctrl.formUpdate.name" placeholder="{{ctrl.festival.name}}"/>
+        <input type="text" ng-model="ctrl.formUpdate.location" placeholder="{{ctrl.festival.location}}"/>
+        <input type="text" ng-model="ctrl.formUpdate.dates" placeholder="{{ctrl.festival.dates}}"/>
+        <input type="text" ng-model="ctrl.formUpdate.cost" placeholder="{{ctrl.festival.cost}}"/>
+        <input type="text" ng-model="ctrl.formUpdate.submittedBy" placeholder="{{ctrl.festival.submittedBy}}"/>
+        <input type="text" ng-model="ctrl.formUpdate.img" placeholder="{{ctrl.festival.img}}"/>
+        <p><button class="submitNew" ng-click="ctrl.updateFestival(ctrl.formUpdate)">Submit</button></p>
+      </form>
+    <footer></footer>
+  </body>
+</html>
