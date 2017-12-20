@@ -1,51 +1,49 @@
 <!DOCTYPE html>
 <html ng-app="BestivalsApp" lang="en">
-<head>
-  <title>Bestivals</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
-  <script type="text/javascript" src="./js/app.js"></script>
-<link rel="stylesheet" type="text/css" href="./css/styles.css">
-</head>
-<body ng-controller="MainController as ctrl">
-
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <!-- <a class="navbar-brand" href="#">Logo</a> -->
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Festivals</a></li>
-        <!-- <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li> -->
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
+  <head>
+    <title>Bestivals</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/app.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+  </head>
+  <body ng-controller="MainController as ctrl">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- <a class="navbar-brand" href="#">Logo</a> -->
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Festivals</a></li>
+            <!-- <li><a href="#">Projects</a></li>
+            <li><a href="#">Contact</a></li> -->
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- CAROUSEL -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
@@ -55,7 +53,6 @@
           <p>Coachella</p>
         </div>
       </div>
-
       <div class="item">
         <img src="http://hapskorea.com/wp-content/uploads/2014/09/Busan-International-Film-Festival-2014.jpg" width="1000" height="600" alt="Image">
         <div class="carousel-caption">
@@ -63,7 +60,6 @@
           <p>Sundance Film Festival</p>
         </div>
       </div>
-
       <div class="item">
         <img src="http://blog.iccadubai.ae/wp-content/uploads/2016/11/2957-Dubai-Food-Carnival-2014.jpg" width="1000" height="600" alt="Image">
         <div class="carousel-caption">
@@ -71,12 +67,8 @@
           <p>Taste Buds Food Festival</p>
         </div>
       </div>
-<<<<<<< HEAD
-
-
     </div>
-
-    <!-- Left and right controls -->
+    <!-- LEFT/RIGHT CAROUSEL CONTROLS -->
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
@@ -85,182 +77,60 @@
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
-</div>
-
-<div class="container text-center">
-  <h3>Festival Types</h3><br>
-  <div class="row">
-    <div class="col-sm-4">
-      <img src="http://thewinetailor.com/files/2015/08/Music_Panels__Compiled_by_smashmethod.jpg" style="width:100%"  class="img-responsive"  alt="Image">
-      <h4>Music</h4>
     </div>
-    <div class="col-sm-4">
-      <img src="http://libbyvision.com/wp-content/uploads/2017/04/007_food_photographer_south_florida_magazine_photographer_dark_style-533x800-640x480_c.jpg" style="width:100%" class="img-responsive"  alt="Image">
-      <h4>Food</h4>
-    </div>
-
-    <div class="col-sm-4">
-      <img src="https://cdn20.patchcdn.com/users/22791208/20161024/024515/styles/T800x600/public/article_images/moviereel_2-1477334232-7103.jpg" class="img-responsive" style="width:100%" width="800" height="600" alt="Image">
-      <h4>Film</h4>
-    </div>
-    <!-- <div class="col-sm-4">
-      <div class="well">
-       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-      </div>
-      <div class="well">
-       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      </div>
-    </div> -->
-  </div>
-</div><br>
-
-<!-- action="/action_page.php" -->
-<!-- <form ng-submit='ctrl.loginUser()'>
-  <div class="form-group">
-    <label for="text">Username</label>
-    <input type="text" class="form-control" id="email" ng-model="ctrl.loginForm.username">
-  </div>
-  <div class="form-group">
-    <label for="pwd">Password:</label>
-    <input ng-model="ctrl.loginForm.password" type="password" class="form-control" id="pwd">
-  </div>
-  <div class="checkbox">
-    <label><input type="checkbox"> Remember me</label>
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form> -->
-
-<!-- ===========================================START -->
-<div class="card">
-    <div class="card-body">
-
-        <div class="table-wrapper-2">
-
-            <!--Table-->
-            <table class="table table-responsive">
-                <thead class="mdb-color lighten-4">
-                    <tr>
-                        <!-- <th>#</th> -->
-                        <th class="th-lg">Festival Name</th>
-                        <th class="th-lg">Type</th>
-                        <th class="th-lg">Location</th>
-                        <th class="th-lg">Date</th>
-                        <th class="th-lg">Cost</th>
-                        <th class="th-lg">Submitted by</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="festival in ctrl.festivals">
-                        <!-- <th scope="row">1</th> -->
-                        <td>{{festival.name}}</td>
-                        <td>{{festival.type}}</td>
-                         <td>{{festival.location}}</td>
-                        <td>{{festival.dates}}</td>
-                         <td>${{festival.cost}}</td>
-                        <td>{{festival.submittedBy}}</td>
-                        <!-- <td><img ng-src="{{festival.img}}" ng-click=""</td> -->
-                        <td ng-click="ctrl.deleteFestival( festival._id)">X</td>
-                    </tr>
-
-                </tbody>
-            </table>
-            <!--Table-->
-
+<!-- SECONDARY NAV -->
+    <div class="container text-center">
+      <h3>Festival Types</h3><br>
+      <div class="row">
+        <div class="col-sm-4">
+          <img src="http://thewinetailor.com/files/2015/08/Music_Panels__Compiled_by_smashmethod.jpg" style="width:100%"  class="img-responsive"  alt="Image">
+          <h4>Music</h4>
         </div>
-
+        <div class="col-sm-4">
+          <img src="http://libbyvision.com/wp-content/uploads/2017/04/007_food_photographer_south_florida_magazine_photographer_dark_style-533x800-640x480_c.jpg" style="width:100%" class="img-responsive"  alt="Image">
+          <h4>Food</h4>
+        </div>
+        <div class="col-sm-4">
+          <img src="https://cdn20.patchcdn.com/users/22791208/20161024/024515/styles/T800x600/public/article_images/moviereel_2-1477334232-7103.jpg" class="img-responsive" style="width:100%" width="800" height="600" alt="Image">
+          <h4>Film</h4>
+        </div>
+      </div>
+    </div><br>
+    <!-- TABLE CONTENTS -->
+    <div class="card">
+        <div class="card-body">
+            <div class="table-wrapper-2">
+                <!--Table-->
+                <table class="table table-responsive">
+                    <thead class="mdb-color lighten-4">
+                        <tr>
+                            <!-- <th>#</th> -->
+                            <th class="th-lg">Festival Name</th>
+                            <th class="th-lg">Type</th>
+                            <th class="th-lg">Location</th>
+                            <th class="th-lg">Date</th>
+                            <th class="th-lg">Cost</th>
+                            <th class="th-lg">Submitted by</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="festival in ctrl.festivals" ng-click="ctrl.oneFest(festival)"<>
+                            <!-- <th scope="row">1</th> -->
+                            <td>{{festival.name}}</td>
+                            <td>{{festival.type}}</td>
+                             <td>{{festival.location}}</td>
+                            <td>{{festival.dates}}</td>
+                             <td>${{festival.cost}}</td>
+                            <td>{{festival.submittedBy}}</td>
+                            <!-- <td><img ng-src="{{festival.img}}" ng-click=""</td> -->
+                            <td ng-click="ctrl.deleteFestival( festival._id)">X</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--Table-->
+            </div>
+        </div>
     </div>
-</div>
-
-
-
-<!-- ==================================NEW FORM START -->
-<form action="/festivals" method='POST'>
-  <div class="addFest jumbotron">
-
-
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputFestival">Festival Name</label>
-      <input name="name" type="text" class="form-control" id="inputEmail4" placeholder="Festival Name">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputlocation">Location</label>
-      <input name="location" type="text" class="form-control" id="inputPassword4" placeholder="City, State">
-    </div>
-  </div>
-  <div class="form-group col-md-6">
-    <label for="inputAddress">Date</label>
-    <input name="dates" type="text" class="form-control" id="inputAddress" placeholder="Festival Date(s)">
-  </div>
-  <div class="form-group col-md-6">
-    <label for="inputAddress2">Ticket Price</label>
-    <input name="cost" type="text" class="form-control" id="inputAddress2" placeholder="Ticket Price?">
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-4">
-      <label for="inputName">Name</label>
-      <input name="submittedBy" type="text" class="form-control" id="inputCity" placeholder="Your Name">
-    </div>
-    <div class="form-group col-md-4">
-      <label for="inputType">Type</label>
-      <select name="type" id="inputState" class="form-control">
-        <option selected>Choose...</option>
-        <option>Music</option>
-        <option>Film</option>
-        <option>Food</option>
-        <option>Misc</option>
-      </select>
-    </div>
-    <div class="form-group col-md-4">
-      <label for="inputZip">Image URL</label>
-      <input name="img"type="text" class="form-control" id="inputZip" placeholder="Image URL">
-    </div>
-  </div>
-
-  <div class="submitFest">
-
-
-  <button type="submit" class="btn btn-primary">Submit</button>
-  </div>
-</form>
-</div>
-
-
-<!-- =======================================NEW FORM END -->
-
-
-<section class="comments">
-  <div ng-repeat="comment in ctrl.comments">
-    <h4>{{ctrl.submittedBy}}</h4>
-    <p>{{ctrl.content}}</p>
-    <hr></hr>
-  </div>
-  <div class="leaveComment">
-    <h4>Leave a comment</h4>
-    <form action="/comments" method="POST">
-      <input type="text" name="submittedBy" placeholder="Your name"/><br>
-
-      <div class="form-group">
-    <label for="exampleFormControlTextarea1">Enter comment:</label>
-    <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div>
-
-
-      
-      <input type="hidden" name="post" value="<%= oneFest._id %>"/>
-      <p><button class="commentPost">Submit</button></p>
-    </form>
-  </div>
-</section>
-
-
-
-<footer class="container-fluid text-center">
-  <p>Footer Text</p>
-</footer>
-
-</body>
-=======
     </section>
     <section class="allFests">
       <table>
@@ -292,8 +162,53 @@
         <input type="hidden" name="submittedBy" value="{{user}}"/>
         <input type="text" name="img" placeholder="Image URL"/>
         <p><button class="submitNew">Submit</button></p>
+=======
+<!-- ADD A FESTIVAL -->
+    <form action="/festivals" method='POST'>
+      <div class="addFest jumbotron">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputFestival">Festival Name</label>
+            <input name="name" type="text" class="form-control" id="inputEmail4" placeholder="Festival Name">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputlocation">Location</label>
+            <input name="location" type="text" class="form-control" id="inputPassword4" placeholder="City, State">
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputAddress">Date</label>
+          <input name="dates" type="text" class="form-control" id="inputAddress" placeholder="Festival Date(s)">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputAddress2">Ticket Price</label>
+          <input name="cost" type="text" class="form-control" id="inputAddress2" placeholder="Ticket Price?">
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="inputName">Name</label>
+            <input name="submittedBy" type="text" class="form-control" id="inputCity" placeholder="Your Name">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputType">Type</label>
+            <select name="type" id="inputState" class="form-control">
+              <option selected>Choose...</option>
+              <option>Music</option>
+              <option>Film</option>
+              <option>Food</option>
+              <option>Misc</option>
+            </select>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputZip">Image URL</label>
+            <input name="img"type="text" class="form-control" id="inputZip" placeholder="Image URL">
+          </div>
+        </div>
+        <div class="submitFest">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
       </form>
-    </section>
+    </div>
     <section>
       <h2>One Festival</h2>
       <h4>{{ctrl.festival.name}}</h4>
@@ -304,22 +219,6 @@
       <p>Submitted by: {{ctrl.festival.submittedBy}}</p>
       <img class="hero" ng-src="{{ctrl.festival.img}}"/>
     </section>
-    <!-- <section class="comments">
-      <div ng-repeat="comment in ctrl.comments">
-        <h4>{{ctrl.submittedBy}}</h4>
-        <p>{{ctrl.content}}</p>
-        <hr></hr>
-      </div>
-      <div class="leaveComment">
-        <h4>Leave a comment</h4>
-        <form action="/comments" method="POST">
-          <input type="text" name="submittedBy" placeholder="Your name"/><br>
-          <input type="text" name="content" placeholder="Your comment"/>
-          <input type="hidden" name="post" value="oneFest._id"/>
-          <p><button class="commentPost">Submit</button></p>
-        </form>
-      </div>
-    </section> -->
     <section class="updateFest">
       <h2>Update Festival</h2>
       <form>
@@ -337,7 +236,28 @@
         <input type="text" ng-model="ctrl.formUpdate.img" placeholder="{{ctrl.festival.img}}"/>
         <p><button class="submitNew" ng-click="ctrl.updateFestival(ctrl.formUpdate)">Submit</button></p>
       </form>
-    <footer></footer>
+    </section>
+    <section class="comments">
+      <div ng-repeat="comment in ctrl.comments">
+        <h4>{{ctrl.submittedBy}}</h4>
+        <p>{{ctrl.content}}</p>
+        <hr></hr>
+      </div>
+      <div class="leaveComment">
+        <h4>Leave a comment</h4>
+        <form action="/comments" method="POST">
+          <input type="text" name="submittedBy" placeholder="Your name"/><br>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Enter comment:</label>
+            <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <input type="hidden" name="post" value=""/>
+          <p><button class="commentPost">Submit</button></p>
+        </form>
+      </div>
+    </section>
+    <footer class="container-fluid text-center">
+      <p>Footer Text</p>
+    </footer>
   </body>
->>>>>>> 71b3596101b35e1ff75fd602794e26b67362db2f
 </html>
