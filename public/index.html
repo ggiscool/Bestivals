@@ -167,36 +167,7 @@
         </div>
     </div>
     </section>
-    <section class="allFests">
-      <table>
-          <tr ng-repeat="festival in ctrl.festivals" ng-click="ctrl.oneFest(festival)">
-            <td><h2>{{festival.name}}</h2></td>
-            <!-- <td>Type: {{festival.type}}</td> -->
-            <td><h4>Location: {{festival.location}}</h4></td>
-            <td><h4>Dates: {{festival.dates}}</h4></td>
-            <!-- <td>Ticket Price: ${{festival.cost}}</td>
-            <td>Submitted by: {{festival.submittedBy}}</td> -->
-            <td><img class="hero" ng-src="{{festival.img}}"></td>
-            <td ng-click="ctrl.deleteFestival(festival._id)">X</td>
-          </tr>
-      </table>
-    </section>
-    <section class="addNew">
-      <h2>Add a Festival</h2>
-      <form action="/festivals" method='POST'>
-        <select name="type">
-          <option value="Music">Music</option>
-          <option value="Food">Food</option>
-          <option value="Film">Film</option>
-          <option value="Misc">Misc</option>
-        </select>
-        <input type="text" name="name" placeholder="Festival Name"/>
-        <input type="text" name="location" placeholder="City, State"/>
-        <input type="text" name="dates" placeholder="Festival Date(s)"/>
-        <input type="text" name="cost" placeholder="Ticket price?"/>
-        <input type="hidden" name="submittedBy" value="{{user}}"/>
-        <input type="text" name="img" placeholder="Image URL"/>
-        <p><button class="submitNew">Submit</button></p>
+  
 <!-- ADD A FESTIVAL -->
     <form action="/festivals" method='POST'>
       <div class="addFest jumbotron">
