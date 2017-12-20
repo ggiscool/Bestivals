@@ -172,33 +172,6 @@
 
 
 
-
-
-
-
-
-<!-- ==========================================END -->
-
-<!-- <section class="allFests">
-
-  <table>
-      <tr ng-repeat="festival in ctrl.festivals">
-        <td><h2>{{festival.name}}</h2></td>
-        <td>Type: {{festival.type}}</td>
-         <td><h4>Location: {{festival.location}}</h4></td>
-        <td><h4>Dates: {{festival.dates}}</h4></td>
-         <td>Ticket Price: ${{festival.cost}}</td>
-        <td>Submitted by: {{festival.submittedBy}}</td>
-
-        <td><img ng-src="{{festival.img}}" ng-click=""</td>
-        <td ng-click="ctrl.deleteFestival( festival._id)">X</td>
-
-
-
-      </tr>
-  </table>
-</section> -->
-
 <!-- ==================================NEW FORM START -->
 <form action="/festivals" method='POST'>
   <div class="addFest jumbotron">
@@ -242,13 +215,7 @@
       <input name="img"type="text" class="form-control" id="inputZip" placeholder="Image URL">
     </div>
   </div>
-  <!-- <div class="form-group">
-    <div class="form-check">
-      <label class="form-check-label">
-        <input class="form-check-input" type="checkbox"> Check me out
-      </label>
-    </div>
-  </div> -->
+
   <div class="submitFest">
 
 
@@ -259,24 +226,7 @@
 
 
 <!-- =======================================NEW FORM END -->
-<!-- <section class="addNew">
-  <h2>Add a Festival</h2>
-  <form action="/festivals" method='POST'>
-    <select name="type">
-      <option value="Music">Music</option>
-      <option value="Food">Food</option>
-      <option value="Film">Film</option>
-      <option value="Misc">Misc</option>
-    </select>
-    <input type="text" name="name" placeholder="Festival Name"/>
-    <input type="text" name="location" placeholder="City, State"/>
-    <input type="text" name="dates" placeholder="Festival Date(s)"/>
-    <input type="text" name="cost" placeholder="Ticket price?"/>
-    <input type="text" name="submittedBy" placeholder="Your Name"/>
-    <input type="text" name="img" placeholder="Image URL"/>
-    <p><button class="submitNew">Submit</button></p>
-  </form>
-</section> -->
+
 
 <section class="comments">
   <div ng-repeat="comment in ctrl.comments">
@@ -295,7 +245,7 @@
   </div>
 
 
-      <!-- <input type="text" name="content" placeholder="Your comment"/> -->
+      
       <input type="hidden" name="post" value="<%= oneFest._id %>"/>
       <p><button class="commentPost">Submit</button></p>
     </form>
