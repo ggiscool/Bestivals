@@ -128,6 +128,7 @@ this.registerUser = () => {
 
 //LOGIN
 this.loginUser = () => {
+  console.log(this.loginForm);
   $http({
   url: '/sessions/login',
   method: 'POST',

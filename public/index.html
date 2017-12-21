@@ -14,6 +14,7 @@
   crossorigin="anonymous"></script>
     <script type="text/javascript" src=".js/tooltip.js"></script>
     <script type="text/javascript" src="./js/app.js"></script>
+      <script type="text/javascript" src="./js/modals.js"></script>
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
   </head>
   <body ng-controller="MainController as ctrl">
@@ -34,18 +35,49 @@
             <!-- <li><a href="#">Projects</a></li>
             <li><a href="#">Contact</a></li> -->
           </ul>
-          <ul class="nav navbar-nav navbar-right">
+
+          <!-- <ul class="nav navbar-nav navbar-right">
             <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
-          </ul>
+           <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Register</a></li> -->
+
+           <div class="nav">
+             <ul class="nav navbar-nav navbar-right">
+               <li><a class"login" href="#"><span class="login glyphicon glyphicon-log-in" ></span> Login</a></li>
+               <li><a class="register" href="#"><span class="register glyphicon glyphicon-log-in" ></span> Register</a></li>
+               <li>Hi, {{ctrl.user.username}}!</li>
+               </ul>
+             <form ng-if='ctrl.user' ng-submit="ctrl.logout()">
+               <input type="submit" value="Logout">
+             </form>
+           </div>
+
+
+           <div class="login-modal">
+             <div class="login-box">Login:<br>
+               <form ng-submit='ctrl.loginUser()'>
+                 <input type="text" placeholder="username" ng-model="ctrl.loginForm.username" />
+                 <input type="password" placeholder="password" ng-model="ctrl.loginForm.password" />
+                 <input type="submit" />
+                 <a class="close-modal" href="#">x</a>
+               </form>
+             </div>
+           </div> 
+           <div class="register-modal">
+             <div class="register-box">Register:<br>
+              <form ng-submit='ctrl.registerUser()'>
+                <input type="text" placeholder="username" ng-model="ctrl.registerForm.username" />
+                <input type="password" placeholder="password" ng-model="ctrl.registerForm.password" />
+                <input type="submit" />
+                <a class="close-modal" href="#">x</a>
+              </form>
+             </div>
+           </div>
         </div>
       </div>
     </nav>
 
 
-    <section class="login-reg">
-      <div class="login-modal">
-
+      <!-- <div class="login-modal">
         <div class="login-box">Login:<br>
           <form ng-submit='ctrl.loginUser()'>
             <input type="text" placeholder="username" ng-model="ctrl.loginForm.username" />
@@ -66,13 +98,14 @@
         </div>
       </div>
       <div class="nav">Hi, {{ctrl.user.username}}!
-        <a class="login" href="#">Login</a>
-        <a class="register" href="#">Register</a>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
         <form ng-if='ctrl.user' ng-submit="ctrl.logout()">
           <input type="submit" value="Logout">
         </form>
-      </div>
-    </section>
+      </div> -->
+
 
 
 
@@ -160,7 +193,7 @@
                             <td>{{festival.type}}</td>
                              <td>{{festival.location}}</td>
                             <td>{{festival.dates}}</td>
-                             <td>${{festival.cost}}</td>
+                             <td>{{festival.cost}}</td>
                             <td>{{festival.submittedBy}}</td>
 
 
@@ -334,5 +367,7 @@
     <footer class="container-fluid text-center">
       <p>Footer Text</p>
     </footer>
+
   </body>
+
 </html>
