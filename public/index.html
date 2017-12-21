@@ -163,9 +163,7 @@
                              <td>${{festival.cost}}</td>
                             <td>{{festival.submittedBy}}</td>
 
-                            <!-- <div id="demo" class="collapse">
-                            <td><img ng-src="{{festival.img}}"></td>
-                            </div> -->
+
                             <!-- <td><img ng-src="{{festival.img}}"></td> -->
                             <td ng-click="ctrl.deleteFestival( festival._id)">X</td>
                         </tr>
@@ -176,6 +174,8 @@
         </div>
     </div>
     </section>
+<div class="addShow">
+
 
 <!-- ADD A FESTIVAL -->
     <form action="/festivals" method='POST'>
@@ -227,13 +227,17 @@
       </form>
     </div>
 
-
     <div class="festJumbo jumbotron">
 
+<!-- =================================OneFest table start -->
 
+
+
+
+<!-- =====================================Onefest table end -->
     <section class=oneFest>
-      <h2>One Festival</h2>
-      <h4>{{ctrl.festival.name}}</h4>
+      <h2>One Festival</h2><hr>
+      <h4>{{ctrl.festival.name}}</h4><hr>
       <p>Type: {{ctrl.festival.type}}</p>
       <p>Location: {{ctrl.festival.location}}</p>
       <p>Dates: {{ctrl.festival.dates}}</p>
@@ -256,7 +260,13 @@
       <div class="leaveComment">
         <h4>Leave a comment</h4>
         <form action="/comments" method="POST">
-          <input type="text" name="submittedBy" placeholder="Your name"/><br>
+
+          <div class="form-group col-md-12">
+      <label for="inputName">Your NAME</label>
+      <input placeholder="Your Name" name="submittedBy" type="text" class="form-control" id="inputZip">
+    </div>
+
+          <!-- <input type="text" name="submittedBy" placeholder="Your name"/><br> -->
           <div class="form-group">
             <label for="exampleFormControlTextarea1">Enter comment:</label>
             <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3"></textarea>
@@ -266,11 +276,11 @@
         </form>
       </div>
     </section>
-
+</div>
 </div>
 <!-- ==================================Start of new styled update -->
 <section class="updateFest">
-  <h2>Update Festival</h2>
+  <h2 class="update">Update Festival</h2>
 <form action="/festivals" method='POST'>
   <div class="addFest jumbotron">
 
