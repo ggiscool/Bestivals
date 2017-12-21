@@ -142,13 +142,8 @@
     </a>
     </div>
 <!-- SECONDARY NAV -->
-<<<<<<< HEAD
     <div class="container text-center">
       <h1>Festival Types</h1><br>
-=======
-    <div class="container-text-center">
-      <h3>Festival Types</h3><br>
->>>>>>> 1ea9f641add2d375c4d11ed05729204ee35fddd9
       <div class="row">
         <div class="col-sm-4" ng-model=""><a href ng-click="goMusic = !goMusic"><img src="http://thewinetailor.com/files/2015/08/Music_Panels__Compiled_by_smashmethod.jpg" style="width:100%"  class="img-responsive"  alt="Image">
           <h4>Music</A></h4>
@@ -331,7 +326,7 @@
     <section class="updateFest">
       <h4 class="update">Update Festival</h4>
       <div class="editFest">
-    <form action="/festivals" method='POST'>
+    <form action="/">
 
 
         <div class="form-row">
@@ -339,7 +334,8 @@
           <div class="form-group col-md-6">
 
             <label for="inputFestival">Festival Name</label>
-            <input name="name" type="text" class="form-control" id="inputEmail4" ng-model="ctrl.formUpdate.name" placeholder="{{ctrl.festival.name}}">
+            <input name="name" type="text" class="form-control" ng-model="ctrl.formUpdate.name" placeholder="{{ctrl.festival.name}}"
+            value="{{ctrl.festival.name}}">
           </div>
           <div class="form-group col-md-6">
             <label for="inputlocation">Location</label>
@@ -376,7 +372,8 @@
           </div>
         </div>
         <div class="submitFest">
-          <button ng-click="ctrl.updateFestival(ctrl.formUpdate)" type="submit"  class="btn btn-primary">Edit Festival</button>
+          <button class="submitNew" ng-click="ctrl.updateFestival(ctrl.formUpdate)">Submit</button></p>
+        </form>
         </div>
       </form>
     </div>
@@ -435,6 +432,26 @@
   </form>
 </div>
 </section> -->
+
+<form action="/festivals" method='POST'>
+  <select name="type">
+    <option value="Music">Music</option>
+    <option value="Food">Food</option>
+    <option value="Film">Film</option>
+    <option value="Misc">Misc</option>
+  </select>
+  <input type="text" ng-model="ctrl.formUpdate.name" placeholder="{{ctrl.festival.name}}"/>
+  <input type="text" ng-model="ctrl.formUpdate.location" placeholder="{{ctrl.festival.location}}"/>
+  <input type="text" ng-model="ctrl.formUpdate.dates" placeholder="{{ctrl.festival.dates}}"/>
+  <input type="text" ng-model="ctrl.formUpdate.cost" placeholder="{{ctrl.festival.cost}}"/>
+  <input type="text" ng-model="ctrl.formUpdate.submittedBy" placeholder="{{ctrl.festival.submittedBy}}"/>
+  <input type="text" ng-model="ctrl.formUpdate.img" placeholder="{{ctrl.festival.img}}"/>
+  <p><button class="submitNew" ng-click="ctrl.updateFestival(ctrl.formUpdate)">Submit</button></p>
+</form>
+
+
+
+
 
     <footer class="container-fluid text-center">
       <p>Footer Text</p>
