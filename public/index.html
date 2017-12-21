@@ -45,7 +45,7 @@
 
                <li><a class"login" href="#"><span class="login glyphicon glyphicon-log-in" ></span class="white"> Login</a></li>
                <li><a class="register" href="#"><span class="register glyphicon glyphicon-log-in" ></span class="white"> Register</a></li>
-               <li>Hi, {{ctrl.user.username}}!</li>
+               <li class="hello">Hi, {{ctrl.user.username}}!</li>
                </ul>
 
              <form ng-if='ctrl.user' ng-submit="ctrl.logout()">
@@ -53,7 +53,7 @@
              </form>
            </div>
            <div class="login-modal">
-             <div class="login-box">Login:<br>
+             <div class="login-box hello">Login:<br>
                <form ng-submit='ctrl.loginUser()'>
                  <input type="text" placeholder="username" ng-model="ctrl.loginForm.username" />
                  <input type="password" placeholder="password" ng-model="ctrl.loginForm.password" />
@@ -63,7 +63,7 @@
              </div>
            </div> 
            <div class="register-modal">
-             <div class="register-box">Register:<br>
+             <div class="register-box hello">Register:<br>
               <form ng-submit='ctrl.registerUser()'>
                 <input type="text" placeholder="username" ng-model="ctrl.registerForm.username" />
                 <input type="password" placeholder="password" ng-model="ctrl.registerForm.password" />
@@ -330,7 +330,7 @@
     <section class="updateFest">
       <!-- <h4 class="update">Update Festival</h4> -->
       <div class="editFest">
-        
+
 
     <form action="/">
       <h2 class="update">Update Festival</h2>

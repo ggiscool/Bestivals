@@ -143,6 +143,9 @@ margin-top: 20px;
   z-index: -1 !important;
 }
 
+.hello {
+  color: grey;
+}
 /*MODALS*/
 /*.login-modal {
     position: fixed;
