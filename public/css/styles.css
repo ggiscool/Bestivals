@@ -34,6 +34,7 @@ h3, h2 {
 .submitFest {
   margin-left: 250px;
   margin-top: 100px;
+<<<<<<< HEAD
 
 }
 .imageShow {
@@ -54,16 +55,39 @@ margin-top: 20px;
 
   margin-left: 275px;
   margin-top: 50px;
+=======
+>>>>>>> b16384079b5e72d1f58aa32c0cea9ee0b0903de5
 
 }
+.imageShow {
+  display: flex;
+margin-left: 20px;
+margin-top: 20px;
+}
+
+.festJumbo {
+  display: flex;
+  /*text-align: center;*/
+  max-width: 1150px;
+  border-radius: 20px;
+  padding: 10px;
+  margin: auto;
+  margin-bottom: 15px;
+}
+
 .jumbotron {
   border-radius: 10px;
 }
+
 .addFest {
   width: 600px;
   text-align: justify;
   margin: auto;
   margin-top: 10px;
+<<<<<<< HEAD
+=======
+  margin-bottom: 15px;
+>>>>>>> b16384079b5e72d1f58aa32c0cea9ee0b0903de5
 
 }
 
@@ -137,6 +161,7 @@ margin-top: 20px;
     width: 100%; /* Set width to 100% */
     margin: auto;
     min-height:200px;
+    max-height: 600px;
     z-index: -1 !important;
 }
 
@@ -183,7 +208,11 @@ margin-top: 20px;
   .carousel-caption {
     display: none;
   }
-
+@media (max-width: 1300px) {
+  .festJumbo{
+    display: inline-block;
+  }
+}
 .hero {
   height: 200px;
 

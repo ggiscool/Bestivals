@@ -39,10 +39,14 @@
            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Register</a></li> -->
            <div class="nav">
              <ul class="nav navbar-nav navbar-right">
-               <li><a class"login" href="#"><span class="login glyphicon glyphicon-log-in" ></span> Login</a></li>
-               <li><a class="register" href="#"><span class="register glyphicon glyphicon-log-in" ></span> Register</a></li>
+
+
+
+               <li><a class"login" href="#"><span class="login glyphicon glyphicon-log-in" ></span class="white"> Login</a></li>
+               <li><a class="register" href="#"><span class="register glyphicon glyphicon-log-in" ></span class="white"> Register</a></li>
                <li>Hi, {{ctrl.user.username}}!</li>
                </ul>
+
              <form ng-if='ctrl.user' ng-submit="ctrl.logout()">
                <input type="submit" value="Logout">
              </form>
@@ -261,10 +265,16 @@
     <section class="updateFest">
       <!-- <h4 class="update">Update Festival</h4> -->
       <div class="editFest">
+<<<<<<< HEAD
         <h2 class="update">Update Festival</h2>
     <form action="/">
 
+=======
+        
+>>>>>>> b16384079b5e72d1f58aa32c0cea9ee0b0903de5
 
+    <form action="/">
+      <h2 class="update">Update Festival</h2>
         <div class="form-row">
 
           <div class="form-group col-md-6">
@@ -320,14 +330,18 @@
         <div class="submitFest">
           <button class="submitNew" ng-click="ctrl.updateFestival(ctrl.formUpdate)">Submit</button></p>
         </form>
+<<<<<<< HEAD
 
           <button ng-click="ctrl.updateFestival(ctrl.formUpdate)" type="submit"  class="btn btn-primary">Update Festival</button>
+=======
+>>>>>>> b16384079b5e72d1f58aa32c0cea9ee0b0903de5
         </div>
       </form>
     </div>
     </section>
 </div>
 </div>
+<<<<<<< HEAD
 
 <!-- ==================================Start of new styled update -->
 <!-- <section class="updateFest">
@@ -379,6 +393,8 @@
 </div>
 </section> -->
 
+=======
+>>>>>>> b16384079b5e72d1f58aa32c0cea9ee0b0903de5
     <footer class="container-fluid text-center">
       <p>BESTIVALS | A Gonzalez, Sampson &amp; Evans Production</p>
     </footer>
