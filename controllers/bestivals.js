@@ -45,6 +45,7 @@ router.get ('/:id', async (req, res) => {
 router.put('/:id', async (req, res) => {
   try {
     const updateFest = await Festival.findByIdAndUpdate(req.params.id, req.body, {new: true});
+    res.redirect('/');
     res.status(200).json(updateFest);
     console.log(updateFest);
   } catch (err) {

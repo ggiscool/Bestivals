@@ -14,7 +14,7 @@
   crossorigin="anonymous"></script>
     <script type="text/javascript" src=".js/tooltip.js"></script>
     <script type="text/javascript" src="./js/app.js"></script>
-      <script type="text/javascript" src="./js/modals.js"></script>
+    <script type="text/javascript" src="./js/modals.js"></script>
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
   </head>
   <body ng-controller="MainController as ctrl">
@@ -35,11 +35,9 @@
             <!-- <li><a href="#">Projects</a></li>
             <li><a href="#">Contact</a></li> -->
           </ul>
-
           <!-- <ul class="nav navbar-nav navbar-right">
             <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Register</a></li> -->
-
            <div class="nav">
              <ul class="nav navbar-nav navbar-right">
                <li><a class"login" href="#"><span class="login glyphicon glyphicon-log-in" ></span> Login</a></li>
@@ -50,8 +48,6 @@
                <input type="submit" value="Logout">
              </form>
            </div>
-
-
            <div class="login-modal">
              <div class="login-box">Login:<br>
                <form ng-submit='ctrl.loginUser()'>
@@ -75,8 +71,6 @@
         </div>
       </div>
     </nav>
-
-
       <!-- <div class="login-modal">
         <div class="login-box">Login:<br>
           <form ng-submit='ctrl.loginUser()'>
@@ -105,10 +99,6 @@
           <input type="submit" value="Logout">
         </form>
       </div> -->
-
-
-
-
     <!-- CAROUSEL -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
@@ -152,20 +142,24 @@
     </a>
     </div>
 <!-- SECONDARY NAV -->
+<<<<<<< HEAD
     <div class="container text-center">
       <h1>Festival Types</h1><br>
+=======
+    <div class="container-text-center">
+      <h3>Festival Types</h3><br>
+>>>>>>> 1ea9f641add2d375c4d11ed05729204ee35fddd9
       <div class="row">
-        <div class="col-sm-4">
-          <img src="http://thewinetailor.com/files/2015/08/Music_Panels__Compiled_by_smashmethod.jpg" style="width:100%"  class="img-responsive"  alt="Image">
-          <h4>Music</h4>
+        <div class="col-sm-4" ng-model=""><a href ng-click="goMusic = !goMusic"><img src="http://thewinetailor.com/files/2015/08/Music_Panels__Compiled_by_smashmethod.jpg" style="width:100%"  class="img-responsive"  alt="Image">
+          <h4>Music</A></h4>
         </div>
         <div class="col-sm-4">
-          <img src="http://libbyvision.com/wp-content/uploads/2017/04/007_food_photographer_south_florida_magazine_photographer_dark_style-533x800-640x480_c.jpg" style="width:100%" class="img-responsive"  alt="Image">
-          <h4>Food</h4>
+          <a href ng-click="goFood = !goFood"><img src="http://libbyvision.com/wp-content/uploads/2017/04/007_food_photographer_south_florida_magazine_photographer_dark_style-533x800-640x480_c.jpg" style="width:100%" class="img-responsive"  alt="Image">
+          <h4>Food</A></h4>
         </div>
         <div class="col-sm-4">
-          <img src="https://cdn20.patchcdn.com/users/22791208/20161024/024515/styles/T800x600/public/article_images/moviereel_2-1477334232-7103.jpg" class="img-responsive" style="width:100%" width="800" height="600" alt="Image">
-          <h4>Film</h4>
+          <a href ng-click="goFilm = !goFilm"><img src="https://cdn20.patchcdn.com/users/22791208/20161024/024515/styles/T800x600/public/article_images/moviereel_2-1477334232-7103.jpg" class="img-responsive" style="width:100%" width="800" height="600" alt="Image">
+          <h4>Film</A></h4>
         </div>
       </div>
     </div><br>
@@ -191,9 +185,61 @@
                             <!-- <th scope="row">1</th> -->
                             <td>{{festival.name}}</td>
                             <td>{{festival.type}}</td>
-                             <td>{{festival.location}}</td>
+                            <td>{{festival.location}}</td>
                             <td>{{festival.dates}}</td>
-                             <td>{{festival.cost}}</td>
+                            <td>{{festival.cost}}</td>
+                            <td>{{festival.submittedBy}}</td>
+                            <!-- <td><img ng-src="{{festival.img}}" ng-click=""</td> -->
+                            <td ng-click="ctrl.deleteFestival( festival._id)">X</td>
+                        </tr>
+                    </tbody>
+                    <tbody class="musicFestivals">
+                        <tr ng-repeat="festival in ctrl.festivals | filter: {type: music}" ng-show="goMusic" ng-click="ctrl.oneFest(festival)"<>
+                            <!-- <th scope="row">1</th> -->
+                            <td>{{festival.name}}</td>
+                            <td>{{festival.type}}</td>
+                            <td>{{festival.location}}</td>
+                            <td>{{festival.dates}}</td>
+                            <td>{{festival.cost}}</td>
+                            <td>{{festival.submittedBy}}</td>
+                            <!-- <td><img ng-src="{{festival.img}}" ng-click=""</td> -->
+                            <td ng-click="ctrl.deleteFestival( festival._id)">X</td>
+                        </tr>
+                    </tbody>
+                    <tbody class="foodFestivals">
+                        <tr ng-repeat="festival in ctrl.festivals | filter: {type: food}" ng-show="goFood" ng-click="ctrl.oneFest(festival)"<>
+                            <!-- <th scope="row">1</th> -->
+                            <td>{{festival.name}}</td>
+                            <td>{{festival.type}}</td>
+                            <td>{{festival.location}}</td>
+                            <td>{{festival.dates}}</td>
+                            <td>{{festival.cost}}</td>
+                            <td>{{festival.submittedBy}}</td>
+                            <!-- <td><img ng-src="{{festival.img}}" ng-click=""</td> -->
+                            <td ng-click="ctrl.deleteFestival( festival._id)">X</td>
+                        </tr>
+                    </tbody>
+                    <tbody class="filmFestivals">
+                        <tr ng-repeat="festival in ctrl.festivals | filter: {type: film}" ng-show="goFilm" ng-click="ctrl.oneFest(festival)"<>
+                            <!-- <th scope="row">1</th> -->
+                            <td>{{festival.name}}</td>
+                            <td>{{festival.type}}</td>
+                            <td>{{festival.location}}</td>
+                            <td>{{festival.dates}}</td>
+                            <td>{{festival.cost}}</td>
+                            <td>{{festival.submittedBy}}</td>
+                            <!-- <td><img ng-src="{{festival.img}}" ng-click=""</td> -->
+                            <td ng-click="ctrl.deleteFestival( festival._id)">X</td>
+                        </tr>
+                    </tbody>
+                    <tbody class="miscFestivals">
+                        <tr ng-repeat="festival in ctrl.festivals | filter {type: misc}" ng-show="goMisc" ng-click="ctrl.oneFest(festival)"<>
+                            <!-- <th scope="row">1</th> -->
+                            <td>{{festival.name}}</td>
+                            <td>{{festival.type}}</td>
+                            <td>{{festival.location}}</td>
+                            <td>{{festival.dates}}</td>
+                            <td>{{festival.cost}}</td>
                             <td>{{festival.submittedBy}}</td>
 
 
@@ -207,9 +253,6 @@
         </div>
     </div>
     </section>
-<div class="addShow">
-
-
 <!-- ADD A FESTIVAL -->
     <form action="/festivals" method='POST'>
       <div class="addFest jumbotron">
@@ -396,7 +439,5 @@
     <footer class="container-fluid text-center">
       <p>Footer Text</p>
     </footer>
-
   </body>
-
 </html>
