@@ -11,6 +11,19 @@ nav {
   margin-bottom: 50px;
   border: 3px solid blue;
 }
+h3, h2 {
+  border-bottom: 2px solid black;
+}
+
+
+.onetablefest {
+  width: 500px;
+}
+.updatefest {
+  /*margin: auto;*/
+  border: 2px solid blue;
+  padding: 50px;
+}
 
 .addnew {
   margin-top: 5px;
@@ -19,6 +32,26 @@ nav {
 
 
 .submitFest {
+  margin-left: 250px;
+  margin-top: 100px;
+
+}
+.imageShow {
+  display: flex;
+margin-left: 20px;
+margin-top: 20px;
+}
+
+.festJumbo {
+  display: flex;
+  /*text-align: center;*/
+  max-width: 1150px;
+  border-radius: 20px;
+  padding: 10px;
+  margin: auto;
+  margin-bottom: 15px;
+
+
   margin-left: 275px;
   margin-top: 50px;
 
@@ -30,6 +63,51 @@ nav {
   width: 600px;
   text-align: justify;
   margin: auto;
+  margin-top: 10px;
+
+}
+
+.editFest {
+  width: 400px;
+  /*width: 500px;*/
+  text-align: justify;
+  margin: auto;
+  margin-top: 10px;
+  border: 3px solid black;
+  margin-left: 10px;
+  border-radius: 10px;
+
+}
+.oneFest {
+  /*margin-top: 15px;
+  margin-left: 230px;*/
+  /*margin: auto;*/
+  border: 3px solid black;
+  border-radius: 15px;
+  text-align: left;
+  padding: 5px;
+  min-height: 400px;
+  min-width: 300px;
+}
+
+.update {
+  text-align: center;
+}
+
+.updateFest {
+  margin-bottom: 15px;
+  /*width: 400px;*/
+}
+.comments {
+  margin-left: 15px;
+  margin-top: 15px;
+  border: 3px solid black;
+  border-radius: 15px;
+  padding: 15px;
+  max-height: 410px;
+  text-align: left;
+  width: 800px;
+
 
 }
 #exampleFormControlTextarea1 {
@@ -58,9 +136,8 @@ nav {
 .carousel-inner img {
     width: 100%; /* Set width to 100% */
     margin: auto;
-    min-height: 200px;
+    min-height:200px;
     max-height: 600px;
-
     z-index: -1 !important;
 }
 
