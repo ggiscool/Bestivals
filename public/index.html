@@ -40,10 +40,14 @@
            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Register</a></li> -->
            <div class="nav">
              <ul class="nav navbar-nav navbar-right">
-               <li><a class"login" href="#"><span class="login glyphicon glyphicon-log-in" ></span> Login</a></li>
-               <li><a class="register" href="#"><span class="register glyphicon glyphicon-log-in" ></span> Register</a></li>
+
+
+
+               <li><a class"login" href="#"><span class="login glyphicon glyphicon-log-in" ></span class="white"> Login</a></li>
+               <li><a class="register" href="#"><span class="register glyphicon glyphicon-log-in" ></span class="white"> Register</a></li>
                <li>Hi, {{ctrl.user.username}}!</li>
                </ul>
+
              <form ng-if='ctrl.user' ng-submit="ctrl.logout()">
                <input type="submit" value="Logout">
              </form>
@@ -293,7 +297,7 @@
           </div>
         </div>
         <div class="submitFest">
-          <button type="submit" data-toggle="tooltip" title="Hooray!" class="btn btn-primary">Add Festival</button>
+          <button type="submit" class="btn btn-primary">Add Festival</button>
         </div>
       </form>
     </div>
@@ -307,8 +311,8 @@
 
 <!-- =====================================Onefest table end -->
     <section class=oneFest>
-      <h2>One Festival</h2><hr>
-      <h3>{{ctrl.festival.name}}</h3h5><hr>
+
+      <h3>{{ctrl.festival.name}}</h3><hr>
       <h5>Type: {{ctrl.festival.type}}</h5>
       <h5>Location: {{ctrl.festival.location}}</h5>
       <h5>Dates: {{ctrl.festival.dates}}</h5>
@@ -324,17 +328,19 @@
 
 
     <section class="updateFest">
-      <h4 class="update">Update Festival</h4>
+      <!-- <h4 class="update">Update Festival</h4> -->
       <div class="editFest">
-    <form action="/festivals" method='POST'>
+        
 
-
+    <form action="/">
+      <h2 class="update">Update Festival</h2>
         <div class="form-row">
 
           <div class="form-group col-md-6">
 
             <label for="inputFestival">Festival Name</label>
-            <input name="name" type="text" class="form-control" id="inputEmail4" ng-model="ctrl.formUpdate.name" placeholder="{{ctrl.festival.name}}">
+            <input name="name" type="text" class="form-control" ng-model="ctrl.formUpdate.name" placeholder="{{ctrl.festival.name}}"
+            value="{{ctrl.festival.name}}">
           </div>
           <div class="form-group col-md-6">
             <label for="inputlocation">Location</label>
@@ -371,66 +377,14 @@
           </div>
         </div>
         <div class="submitFest">
-          <button ng-click="ctrl.updateFestival(ctrl.formUpdate)" type="submit"  class="btn btn-primary">Edit Festival</button>
+          <button class="submitNew" ng-click="ctrl.updateFestival(ctrl.formUpdate)">Submit</button></p>
+        </form>
         </div>
       </form>
     </div>
     </section>
 </div>
 </div>
-<!-- ==================================Start of new styled update -->
-<!-- <section class="updateFest">
-  <h1 class="update">Update Festival</h1>
-<form action="/festivals" method='POST'>
-  <div class="addFest jumbotron">
-
-    <div class="form-row">
-
-      <div class="form-group col-md-6">
-
-        <label for="inputFestival">Festival Name</label>
-        <input type="text" class="form-control" id="inputEmail4" ng-model="ctrl.formUpdate.name" placeholder="{{ctrl.festival.name}}">
-      </div>
-      <div class="form-group col-md-6">
-        <label for="inputlocation">Location</label>
-        <input type="text" ng-model="ctrl.formUpdate.location" placeholder="{{ctrl.festival.location}}" class="form-control" id="inputPassword4">
-      </div>
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputAddress">Date</label>
-      <input type="text" ng-model="ctrl.formUpdate.dates" placeholder="{{ctrl.festival.dates}}" class="form-control" id="inputAddress" >
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputAddress2">Ticket Price</label>
-      <input type="text" ng-model="ctrl.formUpdate.cost" placeholder="{{ctrl.festival.cost}}" class="form-control" id="inputAddress2" >
-    </div>
-    <div class="form-row">
-      <div class="form-group col-md-4">
-        <label for="inputName">Name</label>
-        <input type="text" ng-model="ctrl.formUpdate.submittedBy" placeholder="{{ctrl.festival.submittedBy}}" class="form-control" id="inputCity">
-      </div>
-      <div class="form-group col-md-4">
-        <label for="inputType">Type</label>
-        <select name="type" id="inputState" class="form-control">
-          <option selected>Choose...</option>
-          <option>Music</option>
-          <option>Film</option>
-          <option>Food</option>
-          <option>Misc</option>
-        </select>
-      </div>
-      <div class="form-group col-md-4">
-        <label for="inputZip">Image URL</label>
-        <input ng-model="ctrl.formUpdate.img" placeholder="{{ctrl.festival.img}}" class="form-control" id="inputZip" >
-      </div>
-    </div>
-    <div class="submitFest">
-      <button ng-click="ctrl.updateFestival(ctrl.formUpdate)" type="submit" data-toggle="tooltip" title="Hooray!" class="btn btn-primary">Edit Festival</button>
-    </div>
-  </form>
-</div>
-</section> -->
-
     <footer class="container-fluid text-center">
       <p>Footer Text</p>
     </footer>
