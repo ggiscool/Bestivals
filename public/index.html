@@ -153,7 +153,7 @@
     </div>
 <!-- SECONDARY NAV -->
     <div class="container text-center">
-      <h3>Festival Types</h3><br>
+      <h1>Festival Types</h1><br>
       <div class="row">
         <div class="col-sm-4">
           <img src="http://thewinetailor.com/files/2015/08/Music_Panels__Compiled_by_smashmethod.jpg" style="width:100%"  class="img-responsive"  alt="Image">
@@ -270,50 +270,79 @@
 <!-- =====================================Onefest table end -->
     <section class=oneFest>
       <h2>One Festival</h2><hr>
-      <h4>{{ctrl.festival.name}}</h4><hr>
-      <p>Type: {{ctrl.festival.type}}</p>
-      <p>Location: {{ctrl.festival.location}}</p>
-      <p>Dates: {{ctrl.festival.dates}}</p>
-      <p>Ticket Price: {{ctrl.festival.cost}}</p>
-      <p>Submitted by: {{ctrl.festival.submittedBy}}</p>
+      <h3>{{ctrl.festival.name}}</h3h5><hr>
+      <h5>Type: {{ctrl.festival.type}}</h5>
+      <h5>Location: {{ctrl.festival.location}}</h5>
+      <h5>Dates: {{ctrl.festival.dates}}</h5>
+      <h5>Ticket Price: {{ctrl.festival.cost}}</h5>
+      <h5>Submitted by: {{ctrl.festival.submittedBy}}</h5>
 
     </section>
     <div class="imageShow">
 
 
-    <img class="hero" ng-src="{{ctrl.festival.img}}" width="500" height="400"/>
+    <img class="hero" ng-src="{{ctrl.festival.img}}" width="400" height="400"/>
     </div>
 
-    <section class="comments">
-      <div ng-repeat="comment in ctrl.comments">
-        <h4>{{ctrl.submittedBy}}</h4>
-        <p>{{ctrl.content}}</p>
-        <hr></hr>
-      </div>
-      <div class="leaveComment">
-        <h4>Leave a comment</h4>
-        <form action="/comments" method="POST">
 
-          <div class="form-group col-md-12">
-      <label for="inputName">Your NAME</label>
-      <input placeholder="Your Name" name="submittedBy" type="text" class="form-control" id="inputZip">
-    </div>
+    <section class="updateFest">
+      <h4 class="update">Update Festival</h4>
+      <div class="editFest">
+    <form action="/festivals" method='POST'>
 
-          <!-- <input type="text" name="submittedBy" placeholder="Your name"/><br> -->
-          <div class="form-group">
-            <label for="exampleFormControlTextarea1">Enter comment:</label>
-            <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+        <div class="form-row">
+
+          <div class="form-group col-md-6">
+
+            <label for="inputFestival">Festival Name</label>
+            <input name="name" type="text" class="form-control" id="inputEmail4" ng-model="ctrl.formUpdate.name" placeholder="{{ctrl.festival.name}}">
           </div>
-          <input type="hidden" name="post" value=""/>
-          <p><button class="commentPost">Submit</button></p>
-        </form>
-      </div>
+          <div class="form-group col-md-6">
+            <label for="inputlocation">Location</label>
+            <input name="location" type="text" ng-model="ctrl.formUpdate.location" placeholder="{{ctrl.festival.location}}" class="form-control" id="inputPassword4">
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputAddress">Date</label>
+          <input name="dates" type="text" ng-model="ctrl.formUpdate.dates"
+          value="{{ctrl.festival.dates}}" placeholder="{{ctrl.festival.dates}}" class="form-control" id="inputAddress" >
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputAddress2">Ticket Price</label>
+          <input name="cost" type="text" ng-model="ctrl.formUpdate.cost" placeholder="{{ctrl.festival.cost}}" class="form-control" id="inputAddress2" >
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="inputName">Name</label>
+            <input name="submittedBy" type="text" ng-model="ctrl.formUpdate.submittedBy" placeholder="{{ctrl.festival.submittedBy}}" class="form-control" id="inputCity">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputType">Type</label>
+            <select name="type" id="inputState" class="form-control">
+              <option selected>Choose...</option>
+              <option>Music</option>
+              <option>Film</option>
+              <option>Food</option>
+              <option>Misc</option>
+            </select>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputZip">Image URL</label>
+            <input name="img" ng-model="ctrl.formUpdate.img" placeholder="{{ctrl.festival.img}}" class="form-control" id="inputZip" >
+          </div>
+        </div>
+        <div class="submitFest">
+          <button ng-click="ctrl.updateFestival(ctrl.formUpdate)" type="submit"  class="btn btn-primary">Edit Festival</button>
+        </div>
+      </form>
+    </div>
     </section>
 </div>
 </div>
 <!-- ==================================Start of new styled update -->
-<section class="updateFest">
-  <h2 class="update">Update Festival</h2>
+<!-- <section class="updateFest">
+  <h1 class="update">Update Festival</h1>
 <form action="/festivals" method='POST'>
   <div class="addFest jumbotron">
 
@@ -362,7 +391,7 @@
     </div>
   </form>
 </div>
-</section>
+</section> -->
 
     <footer class="container-fluid text-center">
       <p>Footer Text</p>
