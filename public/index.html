@@ -9,10 +9,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
     <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-    <script type="text/javascript" src=".js/tooltip.js"></script>
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
     <script type="text/javascript" src="./js/app.js"></script>
     <script type="text/javascript" src="./js/modals.js"></script>
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
@@ -141,20 +140,22 @@
       <span class="sr-only">Next</span>
     </a>
     </div>
+<<<<<<< HEAD
 <!-- SECONDARY NAV -->
+=======
+    <!-- SECONDARY NAV -->
+>>>>>>> 74ae27894a365eef2863461c524c7a3fa720173c
     <div class="container text-center">
       <h1>Festival Types</h1><br>
       <div class="row">
-        <div class="col-sm-4" ng-model=""><a href ng-click="goMusic = !goMusic"><img src="http://thewinetailor.com/files/2015/08/Music_Panels__Compiled_by_smashmethod.jpg" style="width:100%"  class="img-responsive"  alt="Image">
-          <h4>Music</A></h4>
+        <div class="col-sm-4"><img src="http://thewinetailor.com/files/2015/08/Music_Panels__Compiled_by_smashmethod.jpg" style="width:100%"  class="img-responsive"  alt="Image">
+          <h4>Music</h4>
         </div>
-        <div class="col-sm-4">
-          <a href ng-click="goFood = !goFood"><img src="http://libbyvision.com/wp-content/uploads/2017/04/007_food_photographer_south_florida_magazine_photographer_dark_style-533x800-640x480_c.jpg" style="width:100%" class="img-responsive"  alt="Image">
-          <h4>Food</A></h4>
+        <div class="col-sm-4"><img src="http://libbyvision.com/wp-content/uploads/2017/04/007_food_photographer_south_florida_magazine_photographer_dark_style-533x800-640x480_c.jpg" style="width:100%" class="img-responsive"  alt="Image">
+          <h4>Food</h4>
         </div>
-        <div class="col-sm-4">
-          <a href ng-click="goFilm = !goFilm"><img src="https://cdn20.patchcdn.com/users/22791208/20161024/024515/styles/T800x600/public/article_images/moviereel_2-1477334232-7103.jpg" class="img-responsive" style="width:100%" width="800" height="600" alt="Image">
-          <h4>Film</A></h4>
+        <div class="col-sm-4"><img src="https://cdn20.patchcdn.com/users/22791208/20161024/024515/styles/T800x600/public/article_images/moviereel_2-1477334232-7103.jpg" class="img-responsive" style="width:100%" width="800" height="600" alt="Image">
+          <h4>Film</h4>
         </div>
       </div>
     </div><br>
@@ -184,66 +185,11 @@
                             <td>{{festival.dates}}</td>
                             <td>{{festival.cost}}</td>
                             <td>{{festival.submittedBy}}</td>
-                            <!-- <td><img ng-src="{{festival.img}}" ng-click=""</td> -->
-                            <td ng-click="ctrl.deleteFestival( festival._id)">X</td>
-                        </tr>
-                    </tbody>
-                    <tbody class="musicFestivals">
-                        <tr ng-repeat="festival in ctrl.festivals | filter: {type: music}" ng-show="goMusic" ng-click="ctrl.oneFest(festival)"<>
-                            <!-- <th scope="row">1</th> -->
-                            <td>{{festival.name}}</td>
-                            <td>{{festival.type}}</td>
-                            <td>{{festival.location}}</td>
-                            <td>{{festival.dates}}</td>
-                            <td>{{festival.cost}}</td>
-                            <td>{{festival.submittedBy}}</td>
-                            <!-- <td><img ng-src="{{festival.img}}" ng-click=""</td> -->
-                            <td ng-click="ctrl.deleteFestival( festival._id)">X</td>
-                        </tr>
-                    </tbody>
-                    <tbody class="foodFestivals">
-                        <tr ng-repeat="festival in ctrl.festivals | filter: {type: food}" ng-show="goFood" ng-click="ctrl.oneFest(festival)"<>
-                            <!-- <th scope="row">1</th> -->
-                            <td>{{festival.name}}</td>
-                            <td>{{festival.type}}</td>
-                            <td>{{festival.location}}</td>
-                            <td>{{festival.dates}}</td>
-                            <td>{{festival.cost}}</td>
-                            <td>{{festival.submittedBy}}</td>
-                            <!-- <td><img ng-src="{{festival.img}}" ng-click=""</td> -->
-                            <td ng-click="ctrl.deleteFestival( festival._id)">X</td>
-                        </tr>
-                    </tbody>
-                    <tbody class="filmFestivals">
-                        <tr ng-repeat="festival in ctrl.festivals | filter: {type: film}" ng-show="goFilm" ng-click="ctrl.oneFest(festival)"<>
-                            <!-- <th scope="row">1</th> -->
-                            <td>{{festival.name}}</td>
-                            <td>{{festival.type}}</td>
-                            <td>{{festival.location}}</td>
-                            <td>{{festival.dates}}</td>
-                            <td>{{festival.cost}}</td>
-                            <td>{{festival.submittedBy}}</td>
-                            <!-- <td><img ng-src="{{festival.img}}" ng-click=""</td> -->
-                            <td ng-click="ctrl.deleteFestival( festival._id)">X</td>
-                        </tr>
-                    </tbody>
-                    <tbody class="miscFestivals">
-                        <tr ng-repeat="festival in ctrl.festivals | filter {type: misc}" ng-show="goMisc" ng-click="ctrl.oneFest(festival)"<>
-                            <!-- <th scope="row">1</th> -->
-                            <td>{{festival.name}}</td>
-                            <td>{{festival.type}}</td>
-                            <td>{{festival.location}}</td>
-                            <td>{{festival.dates}}</td>
-                            <td>{{festival.cost}}</td>
-                            <td>{{festival.submittedBy}}</td>
-
-
-                            <!-- <td><img ng-src="{{festival.img}}"></td> -->
+                            <!-- <td><img ng-src="{{festival.img}}"</td> -->
                             <td ng-click="ctrl.deleteFestival( festival._id)">X</td>
                         </tr>
                     </tbody>
                 </table>
-                <!--Table-->
             </div>
         </div>
     </div>
@@ -251,11 +197,8 @@
 <!-- ADD A FESTIVAL -->
     <form action="/festivals" method='POST'>
       <div class="addFest jumbotron">
-
         <div class="form-row">
-
           <div class="form-group col-md-6">
-
             <label for="inputFestival">Festival Name</label>
             <input name="name" type="text" class="form-control" id="inputEmail4" placeholder="Festival Name">
           </div>
@@ -293,13 +236,12 @@
           </div>
         </div>
         <div class="submitFest">
-          <button type="submit" data-toggle="tooltip" title="Hooray!" class="btn btn-primary">Add Festival</button>
+          <button type="submit" class="btn btn-primary">Add Festival</button>
         </div>
       </form>
     </div>
 
     <div class="festJumbo jumbotron">
-
 <!-- =================================OneFest table start -->
 
 
@@ -314,18 +256,14 @@
       <h5>Dates: {{ctrl.festival.dates}}</h5>
       <h5>Ticket Price: {{ctrl.festival.cost}}</h5>
       <h5>Submitted by: {{ctrl.festival.submittedBy}}</h5>
-
     </section>
     <div class="imageShow">
-
-
-    <img class="hero" ng-src="{{ctrl.festival.img}}" width="400" height="400"/>
+      <img class="hero" ng-src="{{ctrl.festival.img}}" width="600" height="400"/>
     </div>
-
-
     <section class="updateFest">
       <!-- <h4 class="update">Update Festival</h4> -->
       <div class="editFest">
+<<<<<<< HEAD
         <h2 class="update">Update Festival</h2>
     <form action="/">
 
@@ -341,25 +279,36 @@
           <div class="form-group col-md-6">
             <label for="inputlocation">Location</label>
             <input name="location" type="text" ng-model="ctrl.formUpdate.location" placeholder="{{ctrl.festival.location}}" class="form-control" id="inputPassword4">
+=======
+        <form action="/festivals" method='POST'>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputFestival">Festival Name</label>
+              <input required type="text" ng-model="ctrl.formUpdate.name" placeholder="{{ctrl.festival.name}}" class="form-control" id="inputEmail4">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputlocation">Location</label>
+              <input required type="text" ng-model="ctrl.formUpdate.location" placeholder="{{ctrl.festival.location}}" class="form-control" id="inputPassword4">
+            </div>
+>>>>>>> 74ae27894a365eef2863461c524c7a3fa720173c
           </div>
-        </div>
         <div class="form-group col-md-6">
           <label for="inputAddress">Date</label>
-          <input name="dates" type="text" ng-model="ctrl.formUpdate.dates"
+          <input required type="text" ng-model="ctrl.formUpdate.dates"
           value="{{ctrl.festival.dates}}" placeholder="{{ctrl.festival.dates}}" class="form-control" id="inputAddress" >
         </div>
         <div class="form-group col-md-6">
           <label for="inputAddress2">Ticket Price</label>
-          <input name="cost" type="text" ng-model="ctrl.formUpdate.cost" placeholder="{{ctrl.festival.cost}}" class="form-control" id="inputAddress2" >
+          <input required type="text" ng-model="ctrl.formUpdate.cost" placeholder="{{ctrl.festival.cost}}" class="form-control" id="inputAddress2">
         </div>
         <div class="form-row">
           <div class="form-group col-md-4">
             <label for="inputName">Name</label>
-            <input name="submittedBy" type="text" ng-model="ctrl.formUpdate.submittedBy" placeholder="{{ctrl.festival.submittedBy}}" class="form-control" id="inputCity">
+            <input required type="text" ng-model="ctrl.formUpdate.submittedBy" placeholder="{{ctrl.festival.submittedBy}}" class="form-control" id="inputCity">
           </div>
           <div class="form-group col-md-4">
             <label for="inputType">Type</label>
-            <select name="type" id="inputState" class="form-control">
+            <select required ng-model="ctrl.formUpdate.type" placeholder="{{ctrl.festival.type}}" id="inputState" class="form-control" ng-model>
               <option selected>Choose...</option>
               <option>Music</option>
               <option>Film</option>
@@ -369,20 +318,77 @@
           </div>
           <div class="form-group col-md-4">
             <label for="inputZip">Image URL</label>
-            <input name="img" ng-model="ctrl.formUpdate.img" placeholder="{{ctrl.festival.img}}" class="form-control" id="inputZip" >
+            <input required ng-model="ctrl.formUpdate.img" placeholder="{{ctrl.festival.img}}" class="form-control" id="inputZip">
           </div>
         </div>
         <div class="submitFest">
+<<<<<<< HEAD
           <button class="submitNew" ng-click="ctrl.updateFestival(ctrl.formUpdate)">Submit</button></p>
         </form>
+=======
+          <button ng-click="ctrl.updateFestival(ctrl.formUpdate)" type="submit"  class="btn btn-primary">Update Festival</button>
+>>>>>>> 74ae27894a365eef2863461c524c7a3fa720173c
         </div>
       </form>
     </div>
     </section>
 </div>
 </div>
+<<<<<<< HEAD
+=======
+<!-- ==================================Start of new styled update -->
+<!-- <section class="updateFest">
+  <h1 class="update">Update Festival</h1>
+<form action="/festivals" method='POST'>
+  <div class="addFest jumbotron">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputFestival">Festival Name</label>
+        <input required type="text" ng-model="ctrl.formUpdate.name" placeholder="{{ctrl.festival.name}}" class="form-control" id="inputEmail4">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputlocation">Location</label>
+        <input required type="text" ng-model="ctrl.formUpdate.location" placeholder="{{ctrl.festival.location}}" class="form-control" id="inputPassword4">
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputAddress">Date</label>
+      <input required type="text" ng-model="ctrl.formUpdate.dates" placeholder="{{ctrl.festival.dates}}" class="form-control" id="inputAddress" >
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputAddress2">Ticket Price</label>
+      <input required type="text" ng-model="ctrl.formUpdate.cost" placeholder="{{ctrl.festival.cost}}" class="form-control" id="inputAddress2" >
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="inputName">Name</label>
+        <input required type="text" ng-model="ctrl.formUpdate.submittedBy" placeholder="{{ctrl.festival.submittedBy}}" class="form-control" id="inputCity">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputType">Type</label>
+        <select required name="type" id="inputState" class="form-control">
+          <option selected>Choose...</option>
+          <option>Music</option>
+          <option>Film</option>
+          <option>Food</option>
+          <option>Misc</option>
+        </select>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputZip">Image URL</label>
+        <input required ng-model="ctrl.formUpdate.img" placeholder="{{ctrl.festival.img}}" class="form-control" id="inputZip" >
+      </div>
+    </div>
+    <div class="submitFest">
+      <button ng-click="ctrl.updateFestival(ctrl.formUpdate)" type="submit" class="btn btn-primary">Edit Festival</button>
+    </div>
+  </form>
+</div>
+</section> -->
+
+>>>>>>> 74ae27894a365eef2863461c524c7a3fa720173c
     <footer class="container-fluid text-center">
-      <p>Footer Text</p>
+      <p>BESTIVALS | A Gonzalez, Sampson &amp; Evans Production</p>
     </footer>
   </body>
 </html>

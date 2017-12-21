@@ -30,17 +30,3 @@ $closeModal.on('click', closeBox);
 closeBox();
 
 });
-
-
-
-// this.showNav = false;
-//
-// this.openLogin = () => {
-//   document.getElementById("hello").style.height = "200px";
-//   this.showNav = true;
-// }
-//
-// this.closeLogin = () => {
-//   document.getElementById("hello").style.height = "0px";
-//   this.showNav = false;
-// }
