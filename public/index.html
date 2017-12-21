@@ -184,7 +184,7 @@
                         </tr>
                     </tbody>
                     <tbody class="musicFestivals">
-                        <tr ng-repeat="festival in ctrl.festivals" ng-click="ctrl.oneFest(festival)"<>
+                        <tr ng-repeat="festival in ctrl.festivals | filter: {type: music}" ng-show="goMusic" ng-click="ctrl.oneFest(festival)"<>
                             <!-- <th scope="row">1</th> -->
                             <td>{{festival.name}}</td>
                             <td>{{festival.type}}</td>
@@ -197,7 +197,7 @@
                         </tr>
                     </tbody>
                     <tbody class="foodFestivals">
-                        <tr ng-repeat="festival in ctrl.festivals" ng-click="ctrl.oneFest(festival)"<>
+                        <tr ng-repeat="festival in ctrl.festivals | filter: {type: food}" ng-show="goFood" ng-click="ctrl.oneFest(festival)"<>
                             <!-- <th scope="row">1</th> -->
                             <td>{{festival.name}}</td>
                             <td>{{festival.type}}</td>
@@ -210,7 +210,7 @@
                         </tr>
                     </tbody>
                     <tbody class="filmFestivals">
-                        <tr ng-repeat="festival in ctrl.festivals" ng-click="ctrl.oneFest(festival)"<>
+                        <tr ng-repeat="festival in ctrl.festivals | filter: {type: film}" ng-show="goFilm" ng-click="ctrl.oneFest(festival)"<>
                             <!-- <th scope="row">1</th> -->
                             <td>{{festival.name}}</td>
                             <td>{{festival.type}}</td>
@@ -223,7 +223,7 @@
                         </tr>
                     </tbody>
                     <tbody class="miscFestivals">
-                        <tr ng-repeat="festival in ctrl.festivals" ng-click="ctrl.oneFest(festival)"<>
+                        <tr ng-repeat="festival in ctrl.festivals | filter {type: misc}" ng-show="goMisc" ng-click="ctrl.oneFest(festival)"<>
                             <!-- <th scope="row">1</th> -->
                             <td>{{festival.name}}</td>
                             <td>{{festival.type}}</td>
