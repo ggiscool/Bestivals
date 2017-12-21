@@ -50,20 +50,18 @@ margin-top: 20px;
   padding: 10px;
   margin: auto;
   margin-bottom: 15px;
-
-
-  margin-left: 275px;
-  margin-top: 50px;
-
 }
+
 .jumbotron {
   border-radius: 10px;
 }
+
 .addFest {
   width: 600px;
   text-align: justify;
   margin: auto;
   margin-top: 10px;
+  margin-bottom: 15px;
 
 }
 
@@ -184,7 +182,11 @@ margin-top: 20px;
   .carousel-caption {
     display: none;
   }
-
+@media (max-width: 1300px) {
+  .festJumbo{
+    display: inline-block;
+  }
+}
 .hero {
   height: 200px;
 
