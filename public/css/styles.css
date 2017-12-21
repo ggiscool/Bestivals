@@ -58,7 +58,9 @@ nav {
 .carousel-inner img {
     width: 100%; /* Set width to 100% */
     margin: auto;
-    min-height:200px;
+    min-height: 200px;
+    max-height: 600px;
+
     z-index: -1 !important;
 }
 
