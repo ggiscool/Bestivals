@@ -12,6 +12,12 @@ const loginModal = () => {
 const registerModal = () => {
   $registerModal.css('display', 'block', '!important');
 };
+
+const openBox = () => {
+  $loginModal.css('display', 'block');
+  $registerModal.css('display', 'block')
+};
+
 const closeBox = () => {
   $loginModal.css('display', 'none');
   $registerModal.css('display', 'none')
@@ -21,7 +27,11 @@ $login.on('click', loginModal);
 $register.on('click', registerModal);
 $closeModal.on('click', closeBox);
 
+closeBox();
+
 });
+
+
 
 // this.showNav = false;
 //
