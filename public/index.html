@@ -75,34 +75,7 @@
         </div>
       </div>
     </nav>
-      <!-- <div class="login-modal">
-        <div class="login-box">Login:<br>
-          <form ng-submit='ctrl.loginUser()'>
-            <input type="text" placeholder="username" ng-model="ctrl.loginForm.username" />
-            <input type="password" placeholder="password" ng-model="ctrl.loginForm.password" />
-            <input type="submit" />
-            <a class="close-modal" href="#">x</a>
-          </form>
-        </div>
-      </div> 
-      <div class="register-modal">
-        <div class="register-box">Register:<br>
-         <form ng-submit='ctrl.registerUser()'>
-           <input type="text" placeholder="username" ng-model="ctrl.registerForm.username" />
-           <input type="password" placeholder="password" ng-model="ctrl.registerForm.password" />
-           <input type="submit" />
-           <a class="close-modal" href="#">x</a>
-         </form>
-        </div>
-      </div>
-      <div class="nav">Hi, {{ctrl.user.username}}!
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
-        <form ng-if='ctrl.user' ng-submit="ctrl.logout()">
-          <input type="submit" value="Logout">
-        </form>
-      </div> -->
+
     <!-- CAROUSEL -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
@@ -114,21 +87,21 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="https://media.timeout.com/images/101887547/image.jpg" width="1000" height="600"  alt="Image">
+        <img src="images/musiccarousel.jpeg" width="1000" height="600"  alt="Image">
         <div class="carousel-caption">
           <h3>Music</h3>
           <p>Coachella</p>
         </div>
       </div>
       <div class="item">
-        <img src="http://hapskorea.com/wp-content/uploads/2014/09/Busan-International-Film-Festival-2014.jpg" width="1000" height="600" alt="Image">
+        <img src="images/filmcarousel.jpg" width="1000" height="600" alt="Image">
         <div class="carousel-caption">
           <h3>Film</h3>
           <p>Sundance Film Festival</p>
         </div>
       </div>
       <div class="item">
-        <img src="http://blog.iccadubai.ae/wp-content/uploads/2016/11/2957-Dubai-Food-Carnival-2014.jpg" width="1000" height="600" alt="Image">
+        <img src="images/foodcarousel.jpg" width="1000" height="600" alt="Image">
         <div class="carousel-caption">
           <h3>Food</h3>
           <p>Taste Buds Food Festival</p>
@@ -149,15 +122,15 @@
     <div class="container text-center">
       <h1>Festival Types</h1><br>
       <div class="row">
-        <div class="col-sm-4" ng-model=""><a href ng-click="goMusic = !goMusic"><img src="http://thewinetailor.com/files/2015/08/Music_Panels__Compiled_by_smashmethod.jpg" style="width:100%"  class="img-responsive"  alt="Image">
+        <div class="col-sm-4" ng-model=""><a href ng-click="goMusic = !goMusic"><img src="images/musicfest.jpg" style="width:100%"  class="img-responsive"  alt="Image">
           <h4>Music</A></h4>
         </div>
         <div class="col-sm-4">
-          <a href ng-click="goFood = !goFood"><img src="http://libbyvision.com/wp-content/uploads/2017/04/007_food_photographer_south_florida_magazine_photographer_dark_style-533x800-640x480_c.jpg" style="width:100%" class="img-responsive"  alt="Image">
+          <a href ng-click="goFood = !goFood"><img src="images/foodfest.jpg" style="width:100%" class="img-responsive"  alt="Image">
           <h4>Food</A></h4>
         </div>
         <div class="col-sm-4">
-          <a href ng-click="goFilm = !goFilm"><img src="https://cdn20.patchcdn.com/users/22791208/20161024/024515/styles/T800x600/public/article_images/moviereel_2-1477334232-7103.jpg" class="img-responsive" style="width:100%" width="800" height="600" alt="Image">
+          <a href ng-click="goFilm = !goFilm"><img src="images/fimfest.jpg" class="img-responsive" style="width:100%" width="800" height="600" alt="Image">
           <h4>Film</A></h4>
         </div>
       </div>
@@ -304,12 +277,7 @@
 
     <div class="festJumbo jumbotron">
 
-<!-- =================================OneFest table start -->
 
-
-
-
-<!-- =====================================Onefest table end -->
     <section class=oneFest>
 
       <h3>{{ctrl.festival.name}}</h3><hr>
